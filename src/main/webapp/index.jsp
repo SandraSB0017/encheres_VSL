@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	test
+	<h1>Titre pour le test !!</h1>
+	
+	<p>Coucou Sandra, arrives tu à voir ce message ?</p>
+	
 </body>
 </html>
