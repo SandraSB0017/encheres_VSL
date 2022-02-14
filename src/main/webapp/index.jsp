@@ -16,6 +16,8 @@
 >>>>>>> branch 'main' of https://github.com/SandraSB0017/encheres_VSL.git
 
 <p> ça va marcher</p>
+
+<p>deuxième test pour être sûre que ça fonctionne vraiment !!</p>
 	
 </body>
 </html>
