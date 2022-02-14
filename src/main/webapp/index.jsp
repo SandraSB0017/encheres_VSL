@@ -7,29 +7,28 @@
 <body>
 	<h1>Titre pour le test !!</h1>
 	
-<<<<<<< HEAD
 	<p>Coucou Sandra, arrives tu à voir ce message ?</p>
 	<p>oui je le vois </p>
-=======
 	<p>test changement</p>
->>>>>>> branch 'main' of https://github.com/SandraSB0017/encheres_VSL.git
 
-<p> ça va marcher</p>
 
-<p>deuxième test pour être sûre que ça fonctionne vraiment !!</p>
-
-<p>Oui nickel ça fonctionne super bien t'es trop forte !!</p>
-
-<<<<<<< HEAD
-<p>c'est bon ?????</p>
-=======
-<p>c'est bon</p>
-
-<p>c'est formidable !!!</p>
->>>>>>> branch 'main' of https://github.com/SandraSB0017/encheres_VSL.git
-<p> oups</p>
-
-<p>modif test</p>
+	<p> ça va marcher</p>
 	
+	<p>deuxième test pour être sûre que ça fonctionne vraiment !!</p>
+	
+	<p>Oui nickel ça fonctionne super bien t'es trop forte !!</p>
+	
+	<p>c'est bon ?????</p>
+	<p>c'est bon</p>
+	
+	<p>c'est formidable !!!</p>
+	
+	<p> oups</p>
+	
+	<p>modif test</p>
+	<p>test avec la version 4 !!!</p>
+	<p>nouveau test 19h10</p>
+
+
 </body>
 </html>
