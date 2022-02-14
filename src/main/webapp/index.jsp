@@ -20,8 +20,14 @@
 
 <p>Oui nickel ça fonctionne super bien t'es trop forte !!</p>
 
+<<<<<<< HEAD
 <p>c'est bon ?????</p>
+=======
+<p>c'est bon</p>
 
+<p>c'est formidable !!!</p>
+>>>>>>> branch 'main' of https://github.com/SandraSB0017/encheres_VSL.git
+<p> oups</p>
 	
 </body>
 </html>
