@@ -7,10 +7,15 @@
 
 <body>
 
-	<header>
-		<h1>ENI-Enchères</h1>
+	<header class="container">
+	<div class="row">
+			<h1 class="col-6">ENI-Enchères</h1>
+		<div class="btn col-6" >
+	
+			<a href="">S'inscrire - se connecter</a>
+		</div>
+	</div>
 	</header>
-	<a href=""></a>
 	<h2>Liste des enchères</h2>
 
 	<%@ include file="/WEB-INF/fragments/footer.html"%>
