@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +13,7 @@
 			<h1 class="col-6">ENI-Enchères</h1>
 		<div class="btn col-6" >
 	
-			<a href="">S'inscrire - se connecter</a>
+			<a href="${pageContext.request.contextPath}/ServletConnexion">S'inscrire - se connecter</a>
 		</div>
 	</div>
 	</header>
