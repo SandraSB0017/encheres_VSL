@@ -37,15 +37,15 @@
 				<label for="id-fld-name">Téléphone : </label>
 			</div>
 			<div class="form-field col">
-				<input id="telephone" name="telephone" type="text"
+				<input id="telephone" name="telephone" type="number"
 					class="fld-field" required="required" placeholder="06.0...... ?" />
 			</div>
 			<div class="form-label col">
 				<label for="id-fld-name">Code postal : </label>
 			</div>
 			<div class="form-field col">
-				<input id="id-fld-name" name="fld-name" type="text"
-					class="codePostal" required="codePostal"
+				<input id="codePostal" name="codePostal" type="text"
+					class="id-fld-name" required="required"
 					placeholder="Votre code postal ?" />
 			</div>
 			<div class="form-label col">
