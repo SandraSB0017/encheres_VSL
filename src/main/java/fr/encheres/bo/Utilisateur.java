@@ -15,11 +15,12 @@ public class Utilisateur {
 	private int credit;
 	private int administrateur;
 	
-	public int getIndentifiant() {
+	
+	public int getNoUtilisateur() {
 		return noUtilisateur;
 	}
-	public void setIndentifiant(int indentifiant) {
-		this.noUtilisateur = indentifiant;
+	public void setNoUtilisateur(int noUtilisateur) {
+		this.noUtilisateur = noUtilisateur;
 	}
 	public String getPseudo() {
 		return pseudo;
