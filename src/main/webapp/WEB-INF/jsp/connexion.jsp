@@ -6,49 +6,44 @@
 <html>
 <jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
 
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link href="css/connexion.css" rel="stylesheet">
 
 
 <body>
 
-
-
-
-
-
     <c:if test="${ !empty sessionScope.pseudo && !empty sessionScope.motDePasse }">
         <p class="txt-connexion">Vous êtes ${ sessionScope.pseudo } ${ sessionScope.motDePasse } !</p>
     </c:if>
-
-   
     
-    <div class="row mb-3 justify-content-center ">
-    <form method="post" action="ServletConnexion" class="container-form" >
-    
-  <div class="form-group col">
-    
-      <label class="sr-only" for="pseudo">Name</label>
-      <input type="text" name="pseudo" class="form-control" id="pseudo" placeholder="votre identifiant">
-    </div>
-    <div class="form-group col">
-      <label class="sr-only" for="motDePasse">mot de passe</label>
-      <input type="text" name="motDePasse" class="form-control" id="motDePasse" placeholder="votre mot de passe">
-    </div>
-    
-      <div class="form-check col">
-        <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
-        <label class="form-check-label" for="autoSizingCheck2"> Se souvenir de moi </label>
-       </div>
-  
-    <div class="btn-connexion">
-      <button type="submit" class="btn btn-primary">Connexion</button>
-    </div><br>
-    <div class="btn-connexion">
-      <a href="${pageContext.request.contextPath}/ServletNewUtilisateur"><input type="button" name="creerUnCompte" value="Créer un compte"></a>
-    </div>
- 
-</form>
-
-</div>
+    <div id="login">
+        
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post">
+                            <h3 class="text-center text-info">Connexion</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Identifiant:</label><br>
+                                <input type="text" name="pseudo" id="pseudo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Mot de passe:</label><br>
+                                <input type="text" name="motDePasse" id="motDePasse" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>Se souvenir de moi</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <input type="submit" name="Connexion" class="btn btn-info btn-md" value="Connexion">
+                                <a href="${pageContext.request.contextPath}/ServletNewUtilisateur"><input type="submit" name="CreerCompte" class="btn btn-info btn-md" value="Créer un compte"></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
 
 	<%@ include file="/WEB-INF/fragments/footer.html"%>
 </body>
