@@ -5,111 +5,94 @@
 <html>
 
 <jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
+<link href="css/style-profil.css" rel="stylesheet">
 
 <body>
 
 	<header class="container">
 		<div class="row">
-				<h1 class="col-6">ENI-Enchères</h1>
+			<h1 class="col-6">ENI-Enchères</h1>
 		</div>
 	</header>
-	
+
 	<h2>Mon profil</h2>
-<div >
-	<form name="form_compte" action="ServletNewUtilisateur" method="post" class="col-6">
-		<div class="row mb-3" >
-		<div class="form-line gauche">
-			<div class="form-label col">
-				<label for="id-fld-name">Pseudo : </label>
-			</div>
-			<div class="form-field col">
-				<input id="pseudo" name="pseudo" type="text"
-					class="fld-field" required="required" placeholder="Votre pseudo ?" />
-			</div>
-			<div class="form-label col">
-				<label for="id-fld-name">Prénom : </label>
-			</div>
-			<div class="form-field col">
-				<input id="prenom" name="prenom" type="text"
-					class="fld-field" required="required" placeholder="Votre prénom ?" />
-			</div>
-			<div class="form-label col">
-				<label for="id-fld-name">Téléphone : </label>
-			</div>
-			<div class="form-field col">
-				<input id="telephone" name="telephone" type="number"
-					class="fld-field" required="required" placeholder="06.0...... ?" />
-			</div>
-			<div class="form-label col">
-				<label for="id-fld-name">Code postal : </label>
-			</div>
-			<div class="form-field col">
-				<input id="codePostal" name="codePostal" type="text"
-					class="id-fld-name" required="required"
-					placeholder="Votre code postal ?" />
-			</div>
-			<div class="form-label col">
-				<label for="id-fld-password">Mot de passe : </label>
-			</div>
-			<div class="form-field col">
-				<input id="motDePasse" name="motDePasse" type="password"
-					class="fld-field" required="required" />
-			</div>
-			</div>
-		</div>
 
-		<div class="row mb-3">
-		<div class="form-line droite" >
-			<div class="form-label">
-				<label for="fld-first-name">Nom : </label>
-			</div>
-			<div class="form-field">
-				<input id="nom" name="nom"
-					class="fld-field" type="text" required="required"
-					placeholder="Votre nom ?" />
-			</div>
 
-			<div class="form-line">
-				<div class="form-label">
-					<label for="id-fld-email">Email : </label>
-				</div>
-				<div class="form-field">
-					<input id="email" name="email" type="email"
-						class="fld-field" required="required" placeholder="Votre email ?" />
-				</div>
+	<div class="container-formulaire-profil">
 
-				<div class="form-label">
-					<label for="id-fld-tel">Rue : </label>
+		<form action="ServletNewUtilisateur" method="post" class="container-fluid ">
+			<div class="row justify-content-sm-center">
+				<div class="form-gauche mr-5">
+					<div class="form-group">
+						<label for="pseudo">Pseudo:</label> <input type="text"
+							class="form-control" name="pseudo" id="pseudo"
+							placeholder="pseudo">
+					</div>
+					<div class="form-group">
+						<label for="prenom">Prénom:</label> <input type="text"
+							class="form-control" name="prenom" id="prenom"
+							placeholder="prénom">
+					</div>
+					<div class="form-group">
+						<label for="telephone">Téléphone:</label> <input type="tel"
+							class="form-control" name="telephone" id="telephone"
+							placeholder="telephone">
+					</div>
+					<div class="form-group">
+						<label for="codePostal">Code postal:</label> <input type="number"
+							class="form-control" name="codePostal" id="codePostal"
+							placeholder="code postal">
+					</div>
+					<div class="form-group">
+						<label for="motDePasse">Mot de passe:</label> <input
+							type="password" class="form-control" name="motDePasse"
+							id="motDePasse" placeholder="mot de passe">
+
+					</div>
+				
+
 				</div>
-				<div class="form-field">
-					<input id="rue" type="tel" name="rue" class="fld-field"
-						required="required" placeholder="Votre rue ?" />
+				<div class="form-droite">
+					<div class="form-group">
+						<label for="nom">Nom:</label> <input type="text"
+							class="form-control" name="nom" id="nom" placeholder="nom">
+					</div>
+					<div class="form-group">
+						<label for="email">Email:</label> <input type="email"
+							class="form-control" name="email" id="email" placeholder="email">
+					</div>
+					<div class="form-group">
+						<label for="rue">Rue:</label> <input type="text"
+							class="form-control" name="rue" id="rue" placeholder="rue">
+					</div>
+					<div class="form-group">
+						<label for="ville">Ville:</label> <input type="text"
+							class="form-control" name="ville" id="ville" placeholder="ville">
+					</div>
+					<div class="form-group">
+						<label for="confirmation">Confirmation:</label> <input
+							type="password" class="form-control" name="confirmation"
+							id="confirmation" placeholder="confirmation ">
+
+					</div>
+
 				</div>
-				<div class="form-label">
-					<label for="id-fld-tel">Ville : </label>
-				</div>
-				<div class="form-field">
-					<input id="ville" type="tel" name="ville" class="fld-field"
-						required="required" placeholder="Votre ville ?" />
-				</div>
-				<div class="form-label">
-					<label for="id-fld-repeat-password">confirmation: </label>
-				</div>
-				<div class="form-field">
-					<input id="confirmation" name="confirmation"
-						type="password" class="fld-field" required="required" />
-				</div>
-			</div>
-		</div>
-		</div>
-		<div class="btn-connexion">
-      <button type="submit" class="btn btn-primary">Créer</button><br>
-      <div class="btn-connexion">
-    </div>
-    </div>
-	</form>
+			
+	
+	<div class="container-btn-profil">
+
+		<a href="${pageContext.request.contextPath}/ServletNewUtilisateur"
+			type="submit" class="btn btn-info btn-md mt-3 btn-profil">Créer</a>
+		<a href="${pageContext.request.contextPath}/ServletConnexion"
+			type="reset" class="btn btn-info btn-md mt-3 btn-profil">Annuler</a>
+	</div>
+	
 </div>
+	</form>
 
+	</div>
+	
+	
 	<%@ include file="/WEB-INF/fragments/footer.html"%>
 </body>
 </html>
