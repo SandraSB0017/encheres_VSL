@@ -40,7 +40,10 @@
        </div>
   
     <div class="btn-connexion">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Connexion</button>
+    </div><br>
+    <div class="btn-connexion">
+      <a href="${pageContext.request.contextPath}/ServletNewUtilisateur"><input type="button" name="creerUnCompte" value="Créer un compte"></a>
     </div>
  
 </form>
