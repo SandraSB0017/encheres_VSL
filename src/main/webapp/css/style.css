@@ -9,3 +9,26 @@ h2{
 h1{
 	padding-left: 20px;
 }
+
+
+
+
+.container-form{
+	
+	width : 400px;
+}
+
+
+.txt-connexion{
+	text-align: center;
+}
+
+
+.form-check{
+	margin-left: 20px;
+}
+
+.btn-connexion{
+	margin-left: 10px;
+	
+}

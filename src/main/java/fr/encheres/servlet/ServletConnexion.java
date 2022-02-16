@@ -36,8 +36,8 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-			String pseudo = request.getParameter("nom");
-		    String motDePasse = request.getParameter("prenom");
+			String pseudo = request.getParameter("pseudo");
+		    String motDePasse = request.getParameter("motDePasse");
 
 		    HttpSession session = request.getSession();
 
