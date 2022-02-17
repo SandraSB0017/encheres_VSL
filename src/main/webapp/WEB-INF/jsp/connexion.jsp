@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Mot de passe:</label><br>
-                                <input type="text" name="motDePasse" id="motDePasse" class="form-control">
+                                <input type="password" name="motDePasse" id="motDePasse" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Se souvenir de moi</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
