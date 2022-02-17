@@ -2,7 +2,7 @@ package fr.encheres.bo;
 
 public class Utilisateur {
 	
-	private int noUtilisateur;
+	private Integer noUtilisateur;
 	private String pseudo;
 	private String nom;
 	private String prenom;
@@ -16,7 +16,7 @@ public class Utilisateur {
 	private int administrateur;
 	
 	
-	public int getNoUtilisateur() {
+	public Integer getNoUtilisateur() {
 		return noUtilisateur;
 	}
 	public void setNoUtilisateur(int noUtilisateur) {
