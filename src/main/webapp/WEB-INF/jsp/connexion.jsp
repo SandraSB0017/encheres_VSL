@@ -36,7 +36,7 @@
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Se souvenir de moi</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                                 <input type="submit" name="Connexion" class="btn btn-info btn-md" value="Connexion">
-                                <a href="${pageContext.request.contextPath}/ServletNewUtilisateur"><input type="submit" name="CreerCompte" class="btn btn-info btn-md" value="Créer un compte"></a>
+                                <a href="${pageContext.request.contextPath}/ServletNewUtilisateur"><input type="button" name="CreerCompte" class="btn btn-info btn-md" value="Créer un compte"></a>
                             </div>
                         </form>
                     </div>
