@@ -13,7 +13,7 @@ public class UtilisateurManager {
 		this.utilisateurDAO = DAOFactory.getUtilisateurDAO();
 	}
 	
-	public void ajouterUtilisateur(Utilisateur newUtilisateur) throws BusinessException {
+	public Utilisateur ajouterUtilisateur(Utilisateur newUtilisateur) throws BusinessException {
 		BusinessException businessException = new BusinessException();
 		
 		this.validerUtilisateur(newUtilisateur, businessException);
@@ -22,16 +22,20 @@ public class UtilisateurManager {
 		
 		if(!businessException.hasErreurs())
 		{
+		System.out.println("vous etes dans le if");
 			utilisateur = new Utilisateur();
 			utilisateur.setCredit(0);
-			utilisateur.setAdministrateur(0);
+			utilisateur.setAdministrateur(false);
 			this.utilisateurDAO.insertUtilisateur(utilisateur);
 			
 		}
 		else
 		{
+			System.out.println("vous etes dans le else");
 			throw businessException;
+			
 		}
+		return utilisateur;
 	}
 
 	private void validerUtilisateur(Utilisateur newUtilisateur, BusinessException businessException) {

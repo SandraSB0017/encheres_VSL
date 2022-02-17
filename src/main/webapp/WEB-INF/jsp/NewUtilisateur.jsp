@@ -81,8 +81,9 @@
 	
 	<div class="container-btn-profil">
 
-		<a href="${pageContext.request.contextPath}/ServletNewUtilisateur"
-			type="submit" class="btn btn-info btn-md mt-3 btn-profil">Créer</a>
+		
+		
+		<input type="submit" class="btn btn-info btn-md mt-3 btn-profil" value ="créer"></input>
 		<a href="${pageContext.request.contextPath}/ServletConnexion"
 			type="reset" class="btn btn-info btn-md mt-3 btn-profil">Annuler</a>
 	</div>
