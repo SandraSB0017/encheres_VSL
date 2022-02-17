@@ -39,7 +39,7 @@
 							placeholder="telephone">
 					</div>
 					<div class="form-group">
-						<label for="codePostal">Code postal:</label> <input type="number"
+						<label for="codePostal">Code postal:</label> <input type="text"
 							class="form-control" name="codePostal" id="codePostal"
 							placeholder="code postal">
 					</div>

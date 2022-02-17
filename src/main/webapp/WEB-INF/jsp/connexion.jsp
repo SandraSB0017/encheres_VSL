@@ -27,15 +27,17 @@
                             <h3 class="text-center text-info">Connexion</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Identifiant:</label><br>
-                                <input type="text" name="pseudo" id="pseudo" class="form-control">
+                                <input type="text" name="pseudo" id="pseudo" class="form-control" value="${utilisateur.pseudo}">
+                               <span class="erreur">${form.erreurs['pseudo']}</span>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Mot de passe:</label><br>
                                 <input type="password" name="motDePasse" id="motDePasse" class="form-control">
+                                <span class="erreur">${form.erreurs['motDePasse']}</span>
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Se souvenir de moi</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <input type="submit" name="Connexion" class="btn btn-info btn-md" value="Connexion">
+                                 <a href="${pageContext.request.contextPath}/ServletNouvelleVente"><input type="submit" name="Connexion" class="btn btn-info btn-md" value="Connexion"></a>
                                 <a href="${pageContext.request.contextPath}/ServletNewUtilisateur"><input type="button" name="CreerCompte" class="btn btn-info btn-md" value="Créer un compte"></a>
                             </div>
                         </form>

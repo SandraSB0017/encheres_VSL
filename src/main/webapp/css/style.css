@@ -57,6 +57,15 @@ label {
 	border: 1px solid #9C9C9C;
 	background-color: #EAEAEA;
 }
+.container-formulaire-monProfil{
+	padding: 20px 0 0 20px;
+	margin: 0 auto;
+	max-width: 600px;
+	height: 710px;
+	border: 1px solid #9C9C9C;
+	background-color: #EAEAEA;
+	
+}
 
 .divConfirmation {
 	margin-top: 100px;

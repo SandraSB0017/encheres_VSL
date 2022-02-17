@@ -20,7 +20,7 @@
 	<h2>Mon profil</h2>
 
 
-	<div class="container-formulaire-profil">
+	<div class="container-formulaire-monProfil">
 
 		<form
 			action="${pageContext.request.contextPath}/ServletNewUtilisateur"method="post" class="container-fluid ">
@@ -42,7 +42,7 @@
 							placeholder="telephone">
 					</div>
 					<div class="form-group">
-						<label for="codePostal">Code postal:</label> <input type="number"
+						<label for="codePostal">Code postal:</label> <input type="text"
 							class="form-control" name="codePostal" id="codePostal"
 							placeholder="code postal">
 					</div>
