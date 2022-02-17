@@ -21,7 +21,7 @@
 
 	<div class="container-fluid">
 		<div class="container">
-			<div class="row">
+			<div class="row mt-5">
 				<article class="col-md-3"></article>
 				<article class="col-md-7">
 					<form method="post" action="">
@@ -67,8 +67,13 @@
 								<label for="article" class="text">Photo de l'article</label>
 							</div>
 							<div class="col-md-7">
-								<input type="text" class="form-control" id="photoArticle"
-									aria-describedby="photoArticle">
+								<div class="button_outer">
+									<div class="btn_upload">
+										<input type="file" id="upload_file" name="importImage">
+									</div>
+									<div class="processing_bar"></div>
+									<div class="success_box"></div>
+								</div>
 							</div>
 						</div>
 						<br>
@@ -77,8 +82,7 @@
 								<label for="article" class="text">Mise à prix</label>
 							</div>
 							<div class="col-md-7">
-								<input type="text" class="form-control" id="photoArticle"
-									aria-describedby="photoArticle">
+								<input type="number" class="form-control" id="prix">
 							</div>
 						</div>
 						<br>
@@ -87,8 +91,7 @@
 								<label for="article" class="text">Début de l'enchère</label>
 							</div>
 							<div class="col-md-7">
-								<input type="date" class="form-control" id="debutEnchere"
-									aria-describedby="dateDebutEnchere">
+								<input type="date" class="form-control" id="debutEnchere">
 							</div>
 						</div>
 						<br>
@@ -97,8 +100,7 @@
 								<label for="article" class="text">Fin de l'enchère</label>
 							</div>
 							<div class="col-md-7">
-								<input type="date" class="form-control" id="finEnchere"
-									aria-describedby="dateFinEnchere">
+								<input type="date" class="form-control" id="finEnchere">
 							</div>
 						</div>
 						<br>
@@ -107,43 +109,44 @@
 								<div class="container">
 									<div class="panel">
 										<div class="panel-body">
-											<h3 class="text-on-pannel">
-												<strong class="text"> Retrait </strong>
-											</h3>
-											<div ID="textField" class="form-row text-center">
-												<div class="row">
-													<div class=col-3>
-														<label for="rue" class="label1"> Rue :</label>
+											<h3 class="text-on-pannel"><strong class="text"> Retrait </strong></h3>
+												
+											
+											<div ID="textField" class="mt-4">
+												<div class="row col-md-12 form-row text-center">
+													<div class="col-3">
+														<label for="rue" class="label1 "> Rue :</label>
 													</div>
-													<div class=col-8>
-														<input type="text" class="form-control" id="photoArticle"
-															aria-describedby="photoArticle">
+													<div class="col-9">
+														<input type="text" class="form-control" id="nomRue">
 													</div>
-													<br>
-													<div class="row"></div>
-													<div class=col-3>
-														<label for="rue" class="label1"> Code postal :</label>
-													</div>
-													<div class=col-8>
-														<input type="text" class="form-control" id="photoArticle"
-															aria-describedby="photoArticle">
 													</div>
 													<br>
-													<div class="row"></div>
-													<div class=col-3>
-														<label for="rue" class="label1"> Ville :</label>
+													<div class="row col-md-12 form-row text-center">
+													<div class="col-3">
+														<label for="rue" class="label2 "> Code postal :</label>
 													</div>
-													<div class=col-8>
-														<input type="text" class="form-control" id="photoArticle"
-															aria-describedby="photoArticle">
+													<div class="col-9">
+														<input type="text" class="form-control" id="numCP">
 													</div>
+													</div>
+													<br>
+													<div class="row col-md-12 form-row text-center">
+													<div class="col-3">
+														<label for="rue" class="label3 "> Ville :</label>
+													</div>
+													<div class="col-9">
+														<input type="text" class="form-control" id="nomVille">
+													</div>
+													</div>
+													<br>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						
 	<br>
 	<div id="validerSaisie" class="form-row text-center">
 		<div class=col-8>
