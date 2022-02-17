@@ -72,4 +72,33 @@ label{
 	margin-top: 100px;
 	
 }
+.text-on-pannel {
+  background: #fff none repeat scroll 0 0;
+  height: auto;
+  margin-left: 20px;
+  padding: 3px 5px;
+  position: absolute;
+  margin-top: -47px;
+  border: 1px solid black;
+  border-radius: 8px;
+  color:#17A2B8;
+}
 
+.panel {
+  /* for text on pannel */
+  margin-top: 27px !important;
+}
+
+.panel-body {
+  padding-top: 20px !important;
+}
+.panel{
+	border: 1px solid black;
+	border-radius: 8px;
+	width: 600px;
+	height: 250px;
+}
+#validerSaisie{
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
