@@ -4,15 +4,20 @@
     
 <!DOCTYPE html>
 <html>
+<jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
 <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="css/style.css" rel="stylesheet">
 <head>
 <meta charset="UTF-8">
-<title>Enchères - Nouvelle vente</title>
 </head>
 
 
 <body>
+	<header class="container">
+	<div class="row">
+			<h1 class="col-6">ENI-Enchères</h1>
+	</div>
+	</header>
 
 	<div class="container-fluid">
 		<div class="container">
@@ -46,10 +51,10 @@
 						    <select id="categorie" name="categorie" size="1"  class="fld-field">
 							
 								<option>Maison</option>
-								<option></option>
-								<option></option>
-								<option></option>
-								<option></option>
+								<option>Voiture</option>
+								<option>Art</option>
+								<option>Vetement homme</option>
+								<option>Vetement femme</option>
 						</select>
 						  </div> 
 						 </div><br>
@@ -110,6 +115,6 @@
 			</div>
 		</div>
 	</div>
-
+	<%@ include file="/WEB-INF/fragments/footer.html"%>
 </body>
 </html>
