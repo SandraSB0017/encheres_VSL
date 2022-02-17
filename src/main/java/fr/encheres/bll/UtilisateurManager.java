@@ -13,19 +13,20 @@ public class UtilisateurManager {
 		this.utilisateurDAO = DAOFactory.getUtilisateurDAO();
 	}
 	
-	public Utilisateur ajouterUtilisateur(Utilisateur newUtilisateur) throws BusinessException {
+	public Utilisateur ajouterUtilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codePostal, String ville, String motDePasse) throws BusinessException {
 		BusinessException businessException = new BusinessException();
 		
-		this.validerUtilisateur(newUtilisateur, businessException);
+		//this.validerUtilisateur(newUtilisateur, businessException);
 		
-		Utilisateur utilisateur=null;
+		Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
+		utilisateur.setCredit(0);
+		utilisateur.setAdministrateur(false);
 		
 		if(!businessException.hasErreurs())
 		{
 		System.out.println("vous etes dans le if");
-			utilisateur = new Utilisateur();
-			utilisateur.setCredit(0);
-			utilisateur.setAdministrateur(false);
+			
 			this.utilisateurDAO.insertUtilisateur(utilisateur);
 			
 		}

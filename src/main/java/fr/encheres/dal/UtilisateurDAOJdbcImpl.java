@@ -9,7 +9,7 @@ import fr.encheres.bo.Utilisateur;
 
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
-	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe) values(?,?,?,?,?,?,?,?,?)";
+	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) values(?,?,?,?,?,?,?,?,?,?,?)";
 
 	@Override
 	public void insertUtilisateur(Utilisateur utilisateur) {
@@ -25,7 +25,8 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			pstmt.setString(7, utilisateur.getCodePostal());
 			pstmt.setString(8, utilisateur.getVille());
 			pstmt.setString(9, utilisateur.getMotDePasse());
-			
+			pstmt.setInt(10, utilisateur.getCredit());
+			pstmt.setBoolean(11, utilisateur.getAdministrateur());
 			pstmt.executeUpdate();
 			
 			System.out.println("vous etes d le try du dao");
