@@ -36,7 +36,7 @@ public class ServletNewUtilisateur extends HttpServlet {
 		String codePostal;
 		String ville;
 		String motDePasse;
-		Utilisateur newUtilisateur = null;
+		Utilisateur newUtilisateur = new Utilisateur();
 		
 			pseudo = request.getParameter("pseudo");
 			nom =request.getParameter("nom");
@@ -48,27 +48,29 @@ public class ServletNewUtilisateur extends HttpServlet {
 			ville = request.getParameter("ville");
 			motDePasse = request.getParameter("motDePasse");
 			
-			newUtilisateur.setPseudo("pseudo");
-			newUtilisateur.setNom("nom");
-			newUtilisateur.setPrenom("prenom");
-			newUtilisateur.setEmail("email");
-			newUtilisateur.setTelephone("telephone");
-			newUtilisateur.setRue("rue");
-			newUtilisateur.setCodePostal("codePostal");
-			newUtilisateur.setVille("ville");
-			newUtilisateur.setMotDePasse("motDePasse");
+			newUtilisateur.setPseudo(pseudo);
+			newUtilisateur.setNom(nom);
+			newUtilisateur.setPrenom(prenom);
+			newUtilisateur.setEmail(email);
+			newUtilisateur.setTelephone(telephone);
+			newUtilisateur.setRue(rue);
+			newUtilisateur.setCodePostal(codePostal);
+			newUtilisateur.setVille(ville);
+			newUtilisateur.setMotDePasse(motDePasse);
 			
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
 			
 			try {
 				utilisateurManager.ajouterUtilisateur(newUtilisateur);
+				this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/accueil.jsp").forward(request, response);
 			} catch (BusinessException e) {
 				
 				e.printStackTrace();
+				this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/NewUtilisateur.jsp").forward(request, response);
 			}
 	
 
-		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/NewUtilisateur.jsp").forward(request, response);
+		
 	}
 
 }
