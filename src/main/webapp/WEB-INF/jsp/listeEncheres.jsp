@@ -5,6 +5,8 @@
 <html>
 
 <jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="css/style.css" rel="stylesheet">
 
 <body>
 	<c:if test="${ !empty sessionScope.pseudo}">

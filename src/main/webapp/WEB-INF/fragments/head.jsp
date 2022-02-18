@@ -14,6 +14,6 @@
       <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
 
-    
+   
 
 </head>

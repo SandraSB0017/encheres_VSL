@@ -31,6 +31,9 @@ h1 {
 label {
 	color: #17A2B8;
 }
+.text-info{
+	text-align: center;
+}
 
 .btn-profil {
 	display: inline-flex;
@@ -107,3 +110,8 @@ label {
 .check-encheres-ventes{
 	margin-left: 30px;
 }
+
+		/*Custom nav bare */
+		
+		
+
