@@ -25,14 +25,12 @@ public class UtilisateurManager {
 		
 		if(!businessException.hasErreurs())
 		{
-		System.out.println("vous etes dans le if");
 			
 			this.utilisateurDAO.insertUtilisateur(utilisateur);
 			
 		}
 		else
 		{
-			System.out.println("vous etes dans le else");
 			throw businessException;
 			
 		}
@@ -43,6 +41,25 @@ public class UtilisateurManager {
 		
 	}
 	
+	public Utilisateur selectionnerUtilisateur(String pseudo) throws BusinessException{
+		return this.utilisateurDAO.selectUtilisateur(pseudo);
+	}
 	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

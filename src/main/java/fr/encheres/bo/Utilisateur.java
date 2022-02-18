@@ -4,7 +4,7 @@ package fr.encheres.bo;
 
 public class Utilisateur {
 	
-	private Integer noUtilisateur;
+	private int noUtilisateur;
 	private String pseudo;
 	private String nom;
 	private String prenom;
@@ -18,7 +18,7 @@ public class Utilisateur {
 	private Boolean administrateur;
 	
 	
-	public Integer getNoUtilisateur() {
+	public int getNoUtilisateur() {
 		return noUtilisateur;
 	}
 	public void setNoUtilisateur(int noUtilisateur) {
@@ -205,6 +205,11 @@ public class Utilisateur {
 	/*Constructeur vide*/
 	public Utilisateur() {
 		
+	}
+	
+	public Utilisateur(int noUtilisateur) {
+		super();
+		this.noUtilisateur = noUtilisateur;
 	}
 	@Override
 	public String toString() {

@@ -18,6 +18,8 @@
 	</header>
 
 	<h2>Mon profil</h2>
+
+
 	<div class="container-formulaire-monProfil">
 
 		<form
@@ -27,39 +29,39 @@
 					<div class="form-group">
 						<label for="pseudo">Pseudo:</label> <input type="text"
 							class="form-control" name="pseudo" id="pseudo"
-							value="${utilisateur.pseudo}">
+							placeholder="pseudo">
 					</div>
 					<div class="form-group">
 						<label for="prenom">Prénom:</label> <input type="text"
 							class="form-control" name="prenom" id="prenom"
-							value="${utilisateur.prenom}">
+							placeholder="prénom">
 					</div>
 					<div class="form-group">
 						<label for="telephone">Téléphone:</label> <input type="tel"
 							class="form-control" name="telephone" id="telephone"
-							value="${utilisateur.telephone}">
+							placeholder="telephone">
 					</div>
 					<div class="form-group">
 						<label for="codePostal">Code postal:</label> <input type="text"
 							class="form-control" name="codePostal" id="codePostal"
-							value="${utilisateur.codePostal}">
+							placeholder="code postal">
 					</div>
 					<div class="form-group">
 						<label for="motDePasse">Mot de passe:</label> <input
 							type="password" class="form-control" name="motDePasse"
-							id="motDePasse" value="${utilisateur.motDePasse}">
+							id="motDePasse" placeholder="mot de passe">
 
 					</div>
 					<div class="form-group">
 						<label for="motDePasse">Nouveau mot de passe:</label> <input
 							type="password" class="form-control" name="motDePasse"
-							id="motDePasse" value="${utilisateur.motDePasse}">
+							id="motDePasse" placeholder="mot de passe">
 
 					</div>
 					 <div class="form-group">
     					<label for="credit"><strong>Crédit:</strong></label>
     						
-     					 <input type="number"  class="form-control" name="credit" id="credit" value="${utilisateur.credit}">
+     					 <input type="number"  class="form-control" name="credit" id="credit" value="0">
     					
  					 </div>
 
@@ -68,25 +70,25 @@
 				<div class="form-droite">
 					<div class="form-group">
 						<label for="nom">Nom:</label> <input type="text"
-							class="form-control" name="nom" id="nom" value="${utilisateur.nom}">
+							class="form-control" name="nom" id="nom" placeholder="nom">
 					</div>
 					<div class="form-group">
 						<label for="email">Email:</label> <input type="email"
-							class="form-control" name="email" id="email" value="${utilisateur.email}">
+							class="form-control" name="email" id="email" placeholder="email">
 					</div>
 					<div class="form-group">
 						<label for="rue">Rue:</label> <input type="text"
-							class="form-control" name="rue" id="rue" value="${utilisateur.rue}">
+							class="form-control" name="rue" id="rue" placeholder="rue">
 					</div>
 					<div class="form-group">
 						<label for="ville">Ville:</label> <input type="text"
-							class="form-control" name="ville" id="ville" value="${utilisateur.ville}">
+							class="form-control" name="ville" id="ville" placeholder="ville">
 					</div>
 					<div class="divConfirmation">
 					<div class="form-group ">
 						<label for="confirmation">Confirmation:</label> <input
 							type="password" class="form-control" name="confirmation"
-							id="confirmation" value="${utilisateur.motDePasse}">
+							id="confirmation" placeholder="confirmation ">
 
 					</div>
 				</div>

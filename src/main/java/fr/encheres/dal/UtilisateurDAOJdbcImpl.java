@@ -10,10 +10,10 @@ import fr.encheres.bo.Utilisateur;
 public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) values(?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String SELECT_BY_PSEUDO_UTILISATEUR = "select * from UTILISATEURS where pseudo = ?";
 
 	@Override
 	public void insertUtilisateur(Utilisateur utilisateur) {
-		System.out.println("vous etes au dessus du try");
 		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement pstmt = cnx.prepareStatement(INSERT_UTILISATEUR, PreparedStatement.RETURN_GENERATED_KEYS);
 			pstmt.setString(1, utilisateur.getPseudo());
@@ -28,8 +28,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			pstmt.setInt(10, utilisateur.getCredit());
 			pstmt.setBoolean(11, utilisateur.getAdministrateur());
 			pstmt.executeUpdate();
-			
-			System.out.println("vous etes d le try du dao");
 
 			ResultSet rs = pstmt.getGeneratedKeys();
 			if (rs.next()) {
@@ -38,9 +36,42 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			rs.close();
 			pstmt.close();
 		} catch (SQLException e) {
-			System.out.println("vous etes dans le catch");
 			e.printStackTrace();
-		} 
+		}
+	}
+
+	@Override
+	public Utilisateur selectUtilisateur(String pseudo) {
+
+		Utilisateur utilisateur = new Utilisateur();
+		
+		try (Connection cnx = ConnectionProvider.getConnection()) {
+			
+			PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_PSEUDO_UTILISATEUR);
+			pstmt.setString(1, pseudo);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+				utilisateur.setPseudo(rs.getString("pseudo"));
+				utilisateur.setNom(rs.getString("nom"));
+				utilisateur.setPrenom(rs.getString("prenom"));
+				utilisateur.setEmail(rs.getString("email"));
+				utilisateur.setTelephone(rs.getString("telephone"));
+				utilisateur.setRue(rs.getString("rue"));
+				utilisateur.setCodePostal(rs.getString("code_postal"));
+				utilisateur.setVille(rs.getString("ville"));
+				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+				utilisateur.setCredit(rs.getInt("credit"));
+				
+				rs.close();
+				pstmt.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return utilisateur;
 	}
 
 }
