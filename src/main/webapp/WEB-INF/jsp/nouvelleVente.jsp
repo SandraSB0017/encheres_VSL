@@ -7,16 +7,13 @@
 <jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
 <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="css/style.css" rel="stylesheet">
-<head>
-<meta charset="UTF-8">
-</head>
-
 
 <body>
-	<header class="container">
-		<div class="row">
-			<h1 class="col-6">ENI-Enchères</h1>
-			<ul class="nav justify-content-end">
+	<header class="container-fluid">
+		<div class="row col-12">
+			<h1 class="col-4"><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
+			<div class="col-4"></div>
+			<ul class="nav justify-content-end col-4 ">
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletListeEncheres">Accueil enchères</a></li>
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletProfil">Mon profil</a></li>
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletDeconnexion">Déconnexion</a></li>

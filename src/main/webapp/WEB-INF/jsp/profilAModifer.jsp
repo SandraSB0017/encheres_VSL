@@ -10,18 +10,16 @@
 <title>page profil utilisateur</title>
 
 <body>
-
-	<header class="container">
-		<div class="row">
-			<h1 class="col-6">ENI-Enchères</h1>
+	<header class="container-fluid">
+		<div class="row col-12">
+			<h1 class="col-4"><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
+				<div class="col-4"></div>
+				<div class="btn col-4"></div>
 		</div>
 	</header>
 
 	<h2>Mon profil</h2>
-
-
 	<div class="container-formulaire-monProfil">
-
 		<form
 			action="${pageContext.request.contextPath}/ServletNewUtilisateur"method="post" class="container-fluid ">
 			<div class="row justify-content-sm-center">
