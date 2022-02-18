@@ -11,6 +11,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) values(?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String SELECT_BY_PSEUDO_UTILISATEUR = "select * from UTILISATEURS where pseudo = ?";
+	private static final String DELETE_UTILISATEUR = "delete from UTILISATEURS where pseudo = ?";
 
 	@Override
 	public void insertUtilisateur(Utilisateur utilisateur) {
@@ -72,6 +73,18 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			e.printStackTrace();
 		}
 		return utilisateur;
+	}
+
+	@Override
+	public void deleteUtilisateur(String pseudo) {
+		try(Connection cnx = ConnectionProvider.getConnection())
+		{
+			PreparedStatement pstmt = cnx.prepareStatement(DELETE_UTILISATEUR);
+			pstmt.setString(1, pseudo);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

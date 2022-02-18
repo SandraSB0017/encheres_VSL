@@ -45,7 +45,13 @@ public class UtilisateurManager {
 		return this.utilisateurDAO.selectUtilisateur(pseudo);
 	}
 	
-
+	public void supprimerUtilisateur(String pseudo) throws BusinessException{
+		this.utilisateurDAO.deleteUtilisateur(pseudo);
+	}
+	
+	
+	
+	
 }
 
 

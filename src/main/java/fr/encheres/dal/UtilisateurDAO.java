@@ -6,6 +6,7 @@ public interface UtilisateurDAO {
 	
 	public void insertUtilisateur (Utilisateur utilisateur);
 	public Utilisateur selectUtilisateur (String pseudo);
+	public void deleteUtilisateur (String pseudo);
 	
 
 }
