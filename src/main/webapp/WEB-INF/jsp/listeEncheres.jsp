@@ -7,6 +7,9 @@
 <jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
 
 <body>
+	<c:if test="${ !empty sessionScope.pseudo}">
+		<p class="txt-connexion">Vous êtes ${ sessionScope.pseudo } !</p>
+	</c:if>
 	<header class="container">
 		<div class="row">
 			<h1 class="col-6">ENI-Enchères</h1>
