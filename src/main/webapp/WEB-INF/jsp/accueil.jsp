@@ -44,7 +44,7 @@
 					</div>
 				</div>
 				</article>	
-				<article class="col-6">
+				<article class="col-6 mt-3">
 				<div class="row mt-3 form-row text-center">
 					<div class="col-md-3">
 							<input type="submit" class="btn btn-info btn-md mt-5 btn-profil btn-recherche-encheres " value="Rechercher">
@@ -52,13 +52,31 @@
 				</div>
 				</article>
 			</div>
-			
-				
-		
+				<div id="cards">
+					<div class="row">
+					  <div class="col-sm-6">
+					    <div class="card">
+					      <div class="card-body">
+					        <h5 class="card-title"><a href="">PC Gamer pour travailler</a></h5>
+					        <label for="prix" class="prix "> Prix :</label><br>
+					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
+					        <label for="vendeur" class="vendeur "> Vendeur : <a href="">jojo44</a></label>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="col-sm-6">
+					    <div class="card">
+					      <div class="card-body">
+					        <h5 class="card-title"><a href="">Rocket stove pour riz et pâtes</a></h5>
+					       <label for="prix" class="prix "> Prix :</label><br>
+					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
+					        <label for="vendeur" class="vendeur "> Vendeur : <a href="">NineJea</a></label>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
 	</div>
 	<%@ include file="/WEB-INF/fragments/footer.html"%>
-	
-	
-	<form class="rechercher-encheres-form" action="" method="post"></form>
 </body>
 </html>
