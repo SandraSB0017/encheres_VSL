@@ -18,29 +18,34 @@
 	</header>
 	<h2>Liste des enchères</h2>
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-6">
-				<label for="username" class="text-info">Filtres :</label><br> <input
-					type="text" name="recherche" id="recherche" class="recherche"
-					placeholder="Le nom de l'article contient"><br> <br>
-				<div class="row">
-					<div class="col-md-6">
-						<label for="article" class="text">Catégorie : </label> <select
-							id="categorie" name="categorie" size="1" class="fld-field">
-							<option>Toutes</option>
-							<option>Maison</option>
-							<option>Voiture</option>
-							<option>Art</option>
-							<option>Vêtement homme</option>
-							<option>Vêtement femme</option>
-						</select>
+		<form class="rechercher-encheres-form" action="" method="post">
+			<div class="row">
+				<div class="col-md-4">
+					<label for="username" class="text-info">Filtres :</label><br>
+					<input type="text" name="recherche" id="recherche"
+						class="recherche" placeholder="Le nom de l'article contient"><br>
+					<br>
+					<div class="row">
+						<div class="col-md-6">
+							<label for="article" class="text">Catégorie : </label> <select
+								id="categorie" name="categorie" size="1" class="fld-field">
+								<option>Toutes</option>
+								<option>Maison</option>
+								<option>Voiture</option>
+								<option>Art</option>
+								<option>Vêtement homme</option>
+								<option>Vêtement femme</option>
+							</select>
+						</div>
 					</div>
 				</div>
+				<div class="col-md-8">
+					<input type="submit"
+						class="btn btn-info btn-md mt-3 btn-profil btn-recherche-encheres"
+						value="Rechercher">
+				</div>
 			</div>
-			<div class="col-md-6">
-				<button type="button" class="btn-rechercher">Rechercher</button>
-			</div>
-		</div>
+		</form>
 	</div>
 	<%@ include file="/WEB-INF/fragments/footer.html"%>
 </body>
