@@ -116,3 +116,6 @@ label {
 #cards{
 	margin-top: 5%;
 }
+.card-body{
+	background-color: #EFEFEF;
+}
