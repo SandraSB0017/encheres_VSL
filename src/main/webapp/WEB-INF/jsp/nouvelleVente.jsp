@@ -17,14 +17,9 @@
 		<div class="row">
 			<h1 class="col-6">ENI-Enchères</h1>
 			<ul class="nav justify-content-end">
-				<li class="nav-item"><a class="nav-link" 
-					href="${pageContext.request.contextPath}/ServletListeEncheres">Accueil enchères</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/ServletProfil">Mon
-						profil</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/ServletDeconnexion">Déconnexion</a>
-				</li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletListeEncheres">Accueil enchères</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletProfil">Mon profil</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletDeconnexion">Déconnexion</a></li>
 			</ul>
 		</div>
 	</header>

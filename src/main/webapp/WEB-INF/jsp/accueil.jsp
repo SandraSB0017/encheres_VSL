@@ -5,30 +5,34 @@
 <html>
 
 <jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="css/style.css" rel="stylesheet">
 
 <body>
-	<header class="container">
-		<div class="row">
-			<h1 class="col-6">ENI-Enchères</h1>
-			<div class="btn col-6">
-				<a href="${pageContext.request.contextPath}/ServletConnexion">S'inscrire
-					- Se connecter</a>
-			</div>
+	<header class="container-fluid">
+		<div class="row col-12">
+			<h1 class="col-4">ENI-Enchères</h1>
+			<div class="col-4"></div>
+				<div class="btn col-4">
+					<a class="nav-link" href="${pageContext.request.contextPath}/ServletConnexion">S'inscrire - Se connecter</a>
+				</div>
 		</div>
 	</header>
-	<h2>Liste des enchères</h2>
-	<div class="container-fluid">
-		<form class="rechercher-encheres-form" action="" method="post">
+	
+	<h2 class="mt-5">Liste des enchères</h2>
+	
+	<div class="container">
 			<div class="row">
-				<div class="col-md-4">
+				<article class="col-6">
+				<div class="col-md-5 mt-5">
 					<label for="username" class="text-info">Filtres :</label><br>
-					<input type="text" name="recherche" id="recherche"
-						class="recherche" placeholder="Le nom de l'article contient"><br>
-					<br>
-					<div class="row">
-						<div class="col-md-6">
-							<label for="article" class="text">Catégorie : </label> <select
-								id="categorie" name="categorie" size="1" class="fld-field">
+					<input type="text" name="recherche" id="recherche" class="recherche" placeholder="Le nom de l'article contient" size="50">
+					<div class="row mt-2">
+						<div class="col-md-5">
+							<label for="article" class="text ">Catégorie :</label>
+						</div>
+						<div class="col-md-7">
+							<select id="categorie" name="categorie" size="1"  class="fld-field">
 								<option>Toutes</option>
 								<option>Maison</option>
 								<option>Voiture</option>
@@ -39,14 +43,22 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-8">
-					<input type="submit"
-						class="btn btn-info btn-md mt-3 btn-profil btn-recherche-encheres"
-						value="Rechercher">
+				</article>	
+				<article class="col-6">
+				<div class="row mt-3 form-row text-center">
+					<div class="col-md-3">
+							<input type="submit" class="btn btn-info btn-md mt-5 btn-profil btn-recherche-encheres " value="Rechercher">
+					</div>
 				</div>
+				</article>
 			</div>
-		</form>
+			
+				
+		
 	</div>
 	<%@ include file="/WEB-INF/fragments/footer.html"%>
+	
+	
+	<form class="rechercher-encheres-form" action="" method="post"></form>
 </body>
 </html>

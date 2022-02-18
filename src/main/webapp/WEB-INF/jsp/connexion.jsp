@@ -5,18 +5,15 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
-
 <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link href="css/connexion.css" rel="stylesheet">
 
 
 <body>
 	<div id="login">
 		<div class="container">
-			<div id="login-row"
-				class="row justify-content-center align-items-center">
+			<div id="login-row" class="row justify-content-center align-items-center">
 				<div id="login-column" class="col-md-6">
 					<div id="login-box" class="col-md-12">
 						<form id="login-form" class="form" action="" method="post">
