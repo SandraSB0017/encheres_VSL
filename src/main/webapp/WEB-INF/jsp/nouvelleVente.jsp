@@ -16,6 +16,16 @@
 	<header class="container">
 		<div class="row">
 			<h1 class="col-6">ENI-Enchères</h1>
+			<ul class="nav justify-content-end">
+				<li class="nav-item"><a class="nav-link" 
+					href="${pageContext.request.contextPath}/ServletListeEncheres">Accueil enchères</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/ServletProfil">Mon
+						profil</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="${pageContext.request.contextPath}/ServletDeconnexion">Déconnexion</a>
+				</li>
+			</ul>
 		</div>
 	</header>
 
@@ -150,10 +160,7 @@
 	<br>
 	<div id="validerSaisie" class="form-row text-center">
 		<div class=col-8>
-			<input type="submit" name="Connexion"
-				class="btn btn-info btn-md col-3" value="Enregistrer"> <input
-				type="reset" name="Connexion" class="btn btn-danger btn-md col-3"
-				value="Annuler">
+			<input type="submit" name="Connexion" class="btn btn-info btn-md col-3" value="Enregistrer"> <input type="reset" name="Connexion" class="btn btn-danger btn-md col-3" value="Annuler">
 		</div>
 	</div>
 

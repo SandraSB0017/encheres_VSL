@@ -14,7 +14,7 @@
 		<div class="row">
 			<h1 class="col-6">ENI-Enchères</h1>
 			<ul class="nav justify-content-end">
-				<li class="nav-item"><a class="nav-link" aria-current="page"
+				<li class="nav-item"><a class="nav-link" 
 					href="${pageContext.request.contextPath}/ServletNouvelleVente">Enchères</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/ServletNouvelleVente">Vendre
