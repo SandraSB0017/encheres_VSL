@@ -54,7 +54,7 @@ public class ServletNewUtilisateur extends HttpServlet {
 			
 			try {
 				utilisateurManager.ajouterUtilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
-				this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/accueil.jsp").forward(request, response);
+				this.getServletContext().getRequestDispatcher("/ServletConnexion").forward(request, response);
 			} catch (BusinessException e) {
 				
 				e.printStackTrace();
