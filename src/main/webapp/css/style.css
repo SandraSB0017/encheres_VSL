@@ -40,7 +40,17 @@ h1 {
 }
 
 label {
+	
 	color: #17A2B8;
+}
+
+/*.label1{
+	color: rgb(2, 16, 19);
+	
+}*/
+.label-monProfil{
+	color: rgb(2, 16, 19);
+	
 }
 .text-info{
 	text-align: center;
@@ -53,8 +63,9 @@ label {
 	text-decoration: none;
 	justify-content: center;
 	align-items: center;
-	color: #f1f1f1;
-	margin: 0 0 0 0;
+	color: #EAEAEA;
+	background-color:  #17A2B8;
+	margin: 20px auto ;
 	border-radius: 2px;
 	font-size: 18px;
 }
@@ -130,3 +141,42 @@ label {
 .card-body{
 	background-color: #EFEFEF;
 }
+
+
+/**********Page Detail vente**********/
+
+
+.position-image {
+	
+justify-content: center !important;
+}
+
+
+.btn-detailVente {
+	display: inline-flex;
+	width: 200px;
+	height: 50px;
+	text-decoration: none;
+	justify-content: center;
+	align-items: center;
+	color: #EAEAEA;
+	background-color:  #17A2B8;
+	margin: 20px 10px 0 0  ;
+	border-radius: 2px;
+	font-size: 18px;
+	border: none;
+}
+
+.container-btn-detailVente{
+	text-align: center;
+	margin-left: 20px;
+	
+}
+
+
+
+
+
+
+
+

@@ -56,7 +56,7 @@
 					  <div class="col-sm-6">
 					    <div class="card">
 					      <div class="card-body">
-					        <h5 class="card-title"><a href="">PC Gamer pour travailler</a></h5>
+					        <h5 class="card-title"><a href="${pageContext.request.contextPath}/ServletDetailVente">PC Gamer pour travailler</a></h5>
 					        <label for="prix" class="prix "> Prix :</label><br>
 					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
 					        <label for="vendeur" class="vendeur "> Vendeur : <a href="">jojo44</a></label>
