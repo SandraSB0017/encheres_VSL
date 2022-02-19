@@ -11,7 +11,7 @@
 <body>
 <header class="container-fluid">
 		<div class="row col-12">
-			<h1 class="col-4"><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
+			<h1 class="col-4"><a class="eniHome" onclick="history.go(-1)">ENI-Enchères</a></h1>
 			<ul class=" col-8 nav justify-content-end mt-3">
 				<li class="nav-item"><a class="nav-link " 
 					href="${pageContext.request.contextPath}/ServletNouvelleVente">Enchères</a></li>
@@ -22,7 +22,7 @@
 					href="${pageContext.request.contextPath}/ServletDeconnexion">Déconnexion</a>
 				</li>
 			</ul>
-	
+		</div>
 </header>			
 
 

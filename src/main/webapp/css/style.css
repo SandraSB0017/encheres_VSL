@@ -30,6 +30,7 @@ header ul li {
 .eniHome{
 	text-decoration: none;
 	color: black;
+	cursor:pointer;
 }
 
 .eniHome:hover{

@@ -11,7 +11,7 @@
 <body>
 	<header class="container-fluid">
 		<div class="row col-12">
-			<h1 class="col-4"><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
+			<h1 class="col-4"><a class="eniHome" onclick="history.go(-1)">ENI-Enchères</a></h1>
 				<div class="col-4"></div>
 				<div class="btn col-4"></div>
 		</div>
