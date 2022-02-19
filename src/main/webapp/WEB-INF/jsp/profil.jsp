@@ -84,7 +84,7 @@
 									</div>
 								</div>	
 								<div class="container-btn-profil">
-								<a href="${pageContext.request.contextPath}/ServletProfilEdit"><input type="button" name="modifierProfil" class="btn-profil " value="Modifier"></a>
+								<a href="${pageContext.request.contextPath}/ServletProfilEdit"><input type="button" name="modifierProfil" class="btn btn-info btn-md mt-3" value="Modifier"></a>
 								</div>
 							</div>
 						</form>
