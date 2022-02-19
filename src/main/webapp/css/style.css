@@ -3,6 +3,25 @@ body {
 	padding-left: 20px;
 }
 
+/***********NAV*******************/
+
+header ul li {
+      background: #17A2B8;
+      margin: 2px;
+      align-items: center;
+  }
+
+  header ul li a {
+      color: #EAEAEA ! important;
+      text-decoration: none;
+	justify-content: center;
+	
+  }
+  #a-nav{
+   color: #EAEAEA;
+  }
+  
+
 .eniHome{
 	text-decoration: none;
 	color: black;
@@ -172,6 +191,9 @@ justify-content: center !important;
 	margin-left: 20px;
 	
 }
+
+
+
 
 
 

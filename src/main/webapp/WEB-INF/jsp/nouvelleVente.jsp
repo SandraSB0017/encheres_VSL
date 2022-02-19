@@ -9,19 +9,19 @@
 <link href="css/style.css" rel="stylesheet">
 
 <body>
-	<header class="container-fluid">
+	<header class="container-fluid mb-3">
 		<div class="row col-12">
 			<h1 class="col-4"><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
-			<div class="col-4"></div>
-			<ul class="nav justify-content-end col-4 ">
+			
+				<ul class="col-8 nav justify-content-end mt-3">
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletListeEncheres">Accueil enchères</a></li>
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletProfil">Mon profil</a></li>
 				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletDeconnexion">Déconnexion</a></li>
 			</ul>
-		</div>
+		
 	</header>
 
-	<div class="container-fluid">
+	<div class="container-fluid ">
 		<div class="container">
 			<div class="row mt-5">
 				<article class="col-md-3"></article>
