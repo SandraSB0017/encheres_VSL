@@ -3,7 +3,13 @@ body {
 	padding-left: 20px;
 }
 
+a:hover{
+	text-decoration: none;
+}
 /***********NAV*******************/
+.nav-item:hover{
+	box-shadow: 3px 3px 5px #8AECFB;
+}
 
 header ul li {
       background: #17A2B8;
@@ -14,13 +20,12 @@ header ul li {
   header ul li a {
       color: #EAEAEA ! important;
       text-decoration: none;
-	justify-content: center;
+	  justify-content: center;
 	
   }
   #a-nav{
    color: #EAEAEA;
   }
-  
 
 .eniHome{
 	text-decoration: none;
