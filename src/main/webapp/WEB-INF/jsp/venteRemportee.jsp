@@ -17,7 +17,7 @@
 				
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/ServletListeEncheres">Liste des enchères</a></li>
-				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletProfil">Bonjour ${ sessionScope.pseudo }</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletProfil">Mon profil</a></li>
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/ServletDeconnexion">Déconnexion</a>
 				</li>
