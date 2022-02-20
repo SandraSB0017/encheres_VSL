@@ -24,15 +24,12 @@ public class ServletProfilDelete extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		HttpSession session = request.getSession();
-		String pseudo = null;
-		pseudo = (String) session.getAttribute("pseudo");
-			
+		int noUtilisateur = (int) session.getAttribute("noUtilisateur");
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		
 		try {
-			utilisateurManager.supprimerUtilisateur(pseudo);
+			utilisateurManager.supprimerUtilisateur(noUtilisateur);
 		} catch (BusinessException e) {
 			e.printStackTrace();
 		}

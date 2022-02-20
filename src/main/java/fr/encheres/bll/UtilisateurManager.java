@@ -6,66 +6,49 @@ import fr.encheres.dal.UtilisateurDAO;
 import fr.encheres.exception.BusinessException;
 
 public class UtilisateurManager {
-	
+
 	private UtilisateurDAO utilisateurDAO;
 
 	public UtilisateurManager() {
 		this.utilisateurDAO = DAOFactory.getUtilisateurDAO();
 	}
-	
-	public Utilisateur ajouterUtilisateur(String pseudo, String nom, String prenom, String email, String telephone, String rue,
-			String codePostal, String ville, String motDePasse) throws BusinessException {
+
+	public Utilisateur ajouterUtilisateur(String pseudo, String nom, String prenom, String email, String telephone,
+			String rue, String codePostal, String ville, String motDePasse) throws BusinessException {
 		BusinessException businessException = new BusinessException();
-		
-		//this.validerUtilisateur(newUtilisateur, businessException);
-		
-		Utilisateur utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
-		utilisateur.setCredit(0);
-		utilisateur.setAdministrateur(false);
-		
-		if(!businessException.hasErreurs())
-		{
-			
-			this.utilisateurDAO.insertUtilisateur(utilisateur);
-			
-		}
-		else
-		{
-			throw businessException;
-			
+		Utilisateur utilisateur = null;
+
+		if (this.validerUtilisateur(pseudo, businessException)) {
+			utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
+			utilisateur.setCredit(0);
+			utilisateur.setAdministrateur(false);
+			if (!businessException.hasErreurs()) {
+				this.utilisateurDAO.insertUtilisateur(utilisateur);
+			} else {
+				throw businessException;
+			}
 		}
 		return utilisateur;
 	}
 
-	private void validerUtilisateur(Utilisateur newUtilisateur, BusinessException businessException) {
-		
+	private boolean validerUtilisateur(String pseudo, BusinessException businessException) {
+		return this.utilisateurDAO.validerPseudo(pseudo);
 	}
-	
-	public Utilisateur selectionnerUtilisateur(String pseudo) throws BusinessException{
+
+	public Utilisateur selectionnerUtilisateur(String pseudo) throws BusinessException {
 		return this.utilisateurDAO.selectUtilisateur(pseudo);
 	}
-	
-	public void supprimerUtilisateur(String pseudo) throws BusinessException{
-		this.utilisateurDAO.deleteUtilisateur(pseudo);
+
+	public Utilisateur selectionnerUtilisateur(int noUtilisateur) throws BusinessException {
+		return utilisateurDAO.selectUtilisateur(noUtilisateur);
 	}
-	
-	
-	
-	
+
+	public void supprimerUtilisateur(int noUtilisateur) throws BusinessException {
+		this.utilisateurDAO.deleteUtilisateur(noUtilisateur);
+	}
+
+	public void supprimerUtilisateur(Utilisateur utilisateur) throws BusinessException {
+		utilisateurDAO.deleteUtilisateur(utilisateur.getNoUtilisateur());
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

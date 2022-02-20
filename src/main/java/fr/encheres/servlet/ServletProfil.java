@@ -2,7 +2,6 @@ package fr.encheres.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,20 +19,18 @@ import fr.encheres.exception.BusinessException;
 @WebServlet("/ServletProfil")
 public class ServletProfil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String pseudo = null;
-		pseudo = (String) session.getAttribute("pseudo");
-			
+		String pseudo = (String) session.getAttribute("pseudo");
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur utilisateur;
-		
+
 		try {
 			utilisateur = utilisateurManager.selectionnerUtilisateur(pseudo);
 			request.setAttribute("utilisateur", utilisateur);
@@ -44,9 +41,11 @@ public class ServletProfil extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

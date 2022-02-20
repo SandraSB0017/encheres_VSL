@@ -18,15 +18,13 @@ import fr.encheres.exception.BusinessException;
 @WebServlet("/ServletProfilEdit")
 public class ServletProfilEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
+		/*HttpSession session = request.getSession();
 		String pseudo = null;
 		pseudo = (String) session.getAttribute("pseudo");
 			
@@ -38,6 +36,17 @@ public class ServletProfilEdit extends HttpServlet {
 			request.setAttribute("utilisateur", utilisateur);
 		} catch (BusinessException e) {
 			e.printStackTrace();
+		}*/
+		HttpSession session = request.getSession();
+		int noUtilisateur = (int) session.getAttribute("noUtilisateur");
+		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		Utilisateur utilisateur;
+		
+		try {
+			utilisateur = utilisateurManager.selectionnerUtilisateur(noUtilisateur);
+			request.setAttribute("utilisateur", utilisateur);
+		} catch (BusinessException e) {
+			e.printStackTrace();
 		}
 		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/profilEdit.jsp").forward(request, response);
 	}
@@ -46,7 +55,6 @@ public class ServletProfilEdit extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		doGet(request,response);
 	}
-
 }

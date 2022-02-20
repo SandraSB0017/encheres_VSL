@@ -7,11 +7,12 @@ import java.sql.SQLException;
 
 import fr.encheres.bo.Utilisateur;
 
-public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
+public class UtilisateurDAOJdbcImpl<vboolean> implements UtilisateurDAO {
 
 	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) values(?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String SELECT_BY_PSEUDO_UTILISATEUR = "select * from UTILISATEURS where pseudo = ?";
-	private static final String DELETE_UTILISATEUR = "delete from UTILISATEURS where pseudo = ?";
+	private static final String SELECT_BY_ID_UTILISATEUR = "select * from UTILISATEURS where no_utilisateur = ?";
+	private static final String DELETE_UTILISATEUR = "delete from UTILISATEURS where no_utilisateur = ?";
 
 	@Override
 	public void insertUtilisateur(Utilisateur utilisateur) {
@@ -45,14 +46,13 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	public Utilisateur selectUtilisateur(String pseudo) {
 
 		Utilisateur utilisateur = new Utilisateur();
-		
+
 		try (Connection cnx = ConnectionProvider.getConnection()) {
-			
 			PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_PSEUDO_UTILISATEUR);
 			pstmt.setString(1, pseudo);
-			
+
 			ResultSet rs = pstmt.executeQuery();
-			
+
 			while (rs.next()) {
 				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
 				utilisateur.setPseudo(rs.getString("pseudo"));
@@ -65,7 +65,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 				utilisateur.setVille(rs.getString("ville"));
 				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
 				utilisateur.setCredit(rs.getInt("credit"));
-				
+/* à fermer en dehors du while?*/
 				rs.close();
 				pstmt.close();
 			}
@@ -76,15 +76,73 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	}
 
 	@Override
-	public void deleteUtilisateur(String pseudo) {
-		try(Connection cnx = ConnectionProvider.getConnection())
-		{
+	public void deleteUtilisateur(int noUtilisateur) {
+		try (Connection cnx = ConnectionProvider.getConnection()) {
 			PreparedStatement pstmt = cnx.prepareStatement(DELETE_UTILISATEUR);
-			pstmt.setString(1, pseudo);
+			pstmt.setInt(1, noUtilisateur);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public Utilisateur selectUtilisateur(int noUtilisateur) {
+		Utilisateur utilisateur = new Utilisateur();
+
+		try (Connection cnx = ConnectionProvider.getConnection()) {
+
+			PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_ID_UTILISATEUR);
+			pstmt.setInt(1, noUtilisateur);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+				utilisateur.setPseudo(rs.getString("pseudo"));
+				utilisateur.setNom(rs.getString("nom"));
+				utilisateur.setPrenom(rs.getString("prenom"));
+				utilisateur.setEmail(rs.getString("email"));
+				utilisateur.setTelephone(rs.getString("telephone"));
+				utilisateur.setRue(rs.getString("rue"));
+				utilisateur.setCodePostal(rs.getString("code_postal"));
+				utilisateur.setVille(rs.getString("ville"));
+				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+				utilisateur.setCredit(rs.getInt("credit"));
+/* à fermer en dehors du while?*/
+				rs.close();
+				pstmt.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return utilisateur;
+	}
+
+	@Override
+	public boolean validerPseudo(String pseudo) {
+		boolean valide = false;
+		Utilisateur utilisateur = new Utilisateur();
+
+		try (Connection cnx = ConnectionProvider.getConnection()) {
+
+			PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_PSEUDO_UTILISATEUR);
+			pstmt.setString(1, pseudo);
+
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+				valide = false;
+/* à fermer en dehors du if?*/
+				rs.close();
+				pstmt.close();
+			} else {
+				valide=true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return valide;
 	}
 
 }
