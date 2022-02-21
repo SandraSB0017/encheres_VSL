@@ -38,7 +38,6 @@ public class ServletProfilAutreUtilisateur extends HttpServlet {
 		}
 		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/profilAutreUtilisateur.jsp").forward(request, response);
 	
-
 	}
 		
 
