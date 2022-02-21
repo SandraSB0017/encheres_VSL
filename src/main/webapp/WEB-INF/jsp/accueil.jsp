@@ -58,7 +58,9 @@
 					        <h5 class="card-title"><a href="${pageContext.request.contextPath}/ServletDetailVente">PC Gamer pour travailler</a></h5>
 					        <label for="prix" class="prix "> Prix :</label><br>
 					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
-					        <label for="vendeur" class="vendeur "> Vendeur : <a href="">jojo44</a></label>
+					        <label for="vendeur" name="vendeur"  class="vendeur "> Vendeur : 
+					<a id="vendeur" name="vendeur" href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur"><input id= "vendeur" value="jojo44"/></a></label>
+				
 					      </div>
 					    </div>
 					  </div>
@@ -68,7 +70,7 @@
 					        <h5 class="card-title"><a href="">Rocket stove pour riz et pâtes</a></h5>
 					       <label for="prix" class="prix "> Prix :</label><br>
 					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
-					        <label for="vendeur" class="vendeur "> Vendeur : <a href="">NineJea</a></label>
+					        <label for="vendeur" name="vendeur" class="vendeur "> Vendeur : <a href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur">NineJea</a></label>
 					      </div>
 					    </div>
 					  </div>
