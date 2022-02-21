@@ -16,8 +16,9 @@ public class UtilisateurDAOJdbcImpl<vboolean> implements UtilisateurDAO {
 
 	@Override
 	public void insertUtilisateur(Utilisateur utilisateur) {
-		try (Connection cnx = ConnectionProvider.getConnection()) {
-			PreparedStatement pstmt = cnx.prepareStatement(INSERT_UTILISATEUR, PreparedStatement.RETURN_GENERATED_KEYS);
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(INSERT_UTILISATEUR,
+						PreparedStatement.RETURN_GENERATED_KEYS)) {
 			pstmt.setString(1, utilisateur.getPseudo());
 			pstmt.setString(2, utilisateur.getNom());
 			pstmt.setString(3, utilisateur.getPrenom());
@@ -31,12 +32,11 @@ public class UtilisateurDAOJdbcImpl<vboolean> implements UtilisateurDAO {
 			pstmt.setBoolean(11, utilisateur.getAdministrateur());
 			pstmt.executeUpdate();
 
-			ResultSet rs = pstmt.getGeneratedKeys();
-			if (rs.next()) {
-				utilisateur.setNoUtilisateur(rs.getInt(1));
+			try (ResultSet rs = pstmt.getGeneratedKeys()) {
+				if (rs.next()) {
+					utilisateur.setNoUtilisateur(rs.getInt(1));
+				}
 			}
-			rs.close();
-			pstmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -47,97 +47,91 @@ public class UtilisateurDAOJdbcImpl<vboolean> implements UtilisateurDAO {
 
 		Utilisateur utilisateur = new Utilisateur();
 
-		try (Connection cnx = ConnectionProvider.getConnection()) {
-			PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_PSEUDO_UTILISATEUR);
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_PSEUDO_UTILISATEUR)) {
 			pstmt.setString(1, pseudo);
 
-			ResultSet rs = pstmt.executeQuery();
+			try (ResultSet rs = pstmt.executeQuery()) {
 
-			while (rs.next()) {
-				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
-				utilisateur.setPseudo(rs.getString("pseudo"));
-				utilisateur.setNom(rs.getString("nom"));
-				utilisateur.setPrenom(rs.getString("prenom"));
-				utilisateur.setEmail(rs.getString("email"));
-				utilisateur.setTelephone(rs.getString("telephone"));
-				utilisateur.setRue(rs.getString("rue"));
-				utilisateur.setCodePostal(rs.getString("code_postal"));
-				utilisateur.setVille(rs.getString("ville"));
-				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
-				utilisateur.setCredit(rs.getInt("credit"));
-/* à fermer en dehors du while?*/
-				rs.close();
-				pstmt.close();
+				while (rs.next()) {
+					utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+					utilisateur.setPseudo(rs.getString("pseudo"));
+					utilisateur.setNom(rs.getString("nom"));
+					utilisateur.setPrenom(rs.getString("prenom"));
+					utilisateur.setEmail(rs.getString("email"));
+					utilisateur.setTelephone(rs.getString("telephone"));
+					utilisateur.setRue(rs.getString("rue"));
+					utilisateur.setCodePostal(rs.getString("code_postal"));
+					utilisateur.setVille(rs.getString("ville"));
+					utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+					utilisateur.setCredit(rs.getInt("credit"));
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return utilisateur;
 	}
-
+	
 	@Override
 	public void deleteUtilisateur(int noUtilisateur) {
-		try (Connection cnx = ConnectionProvider.getConnection()) {
-			PreparedStatement pstmt = cnx.prepareStatement(DELETE_UTILISATEUR);
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(DELETE_UTILISATEUR)) {
+
 			pstmt.setInt(1, noUtilisateur);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	@Override
 	public Utilisateur selectUtilisateur(int noUtilisateur) {
 		Utilisateur utilisateur = new Utilisateur();
 
-		try (Connection cnx = ConnectionProvider.getConnection()) {
-
-			PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_ID_UTILISATEUR);
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_ID_UTILISATEUR)) {
 			pstmt.setInt(1, noUtilisateur);
 
-			ResultSet rs = pstmt.executeQuery();
+			try (ResultSet rs = pstmt.executeQuery()) {
 
-			while (rs.next()) {
-				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
-				utilisateur.setPseudo(rs.getString("pseudo"));
-				utilisateur.setNom(rs.getString("nom"));
-				utilisateur.setPrenom(rs.getString("prenom"));
-				utilisateur.setEmail(rs.getString("email"));
-				utilisateur.setTelephone(rs.getString("telephone"));
-				utilisateur.setRue(rs.getString("rue"));
-				utilisateur.setCodePostal(rs.getString("code_postal"));
-				utilisateur.setVille(rs.getString("ville"));
-				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
-				utilisateur.setCredit(rs.getInt("credit"));
-/* à fermer en dehors du while?*/
-				rs.close();
-				pstmt.close();
+				while (rs.next()) {
+					utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+					utilisateur.setPseudo(rs.getString("pseudo"));
+					utilisateur.setNom(rs.getString("nom"));
+					utilisateur.setPrenom(rs.getString("prenom"));
+					utilisateur.setEmail(rs.getString("email"));
+					utilisateur.setTelephone(rs.getString("telephone"));
+					utilisateur.setRue(rs.getString("rue"));
+					utilisateur.setCodePostal(rs.getString("code_postal"));
+					utilisateur.setVille(rs.getString("ville"));
+					utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+					utilisateur.setCredit(rs.getInt("credit"));
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return utilisateur;
 	}
-
+	
 	@Override
 	public boolean validerPseudo(String pseudo) {
 		boolean valide = false;
 		Utilisateur utilisateur = new Utilisateur();
 
-		try (Connection cnx = ConnectionProvider.getConnection()) {
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_PSEUDO_UTILISATEUR)) {
 
-			PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_PSEUDO_UTILISATEUR);
 			pstmt.setString(1, pseudo);
 
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next()) {
-				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
-				valide = false;
-/* à fermer en dehors du if?*/
-				rs.close();
-				pstmt.close();
-			} else {
-				valide=true;
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs.next()) {
+					utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+					valide = false;
+				} else {
+					valide = true;
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
