@@ -26,33 +26,33 @@
 					<div class="form-group">
 						<label for="pseudo">Pseudo:</label> <input type="text"
 							class="form-control" name="pseudo" id="pseudo"
-							value="${utilisateur.pseudo}">
+							value="${utilisateur.pseudo}" required>
 					</div>
 					<div class="form-group">
 						<label for="prenom">Prénom:</label> <input type="text"
 							class="form-control" name="prenom" id="prenom"
-							value="${utilisateur.prenom}">
+							value="${utilisateur.prenom}" required>
 					</div>
 					<div class="form-group">
 						<label for="telephone">Téléphone:</label> <input type="tel"
 							class="form-control" name="telephone" id="telephone"
-							value="${utilisateur.telephone}">
+							value="${utilisateur.telephone}" required>
 					</div>
 					<div class="form-group">
 						<label for="codePostal">Code postal:</label> <input type="text"
 							class="form-control" name="codePostal" id="codePostal"
-							value="${utilisateur.codePostal}">
+							value="${utilisateur.codePostal}" required>
 					</div>
 					<div class="form-group">
 						<label for="motDePasse">Mot de passe:</label> <input
 							type="password" class="form-control" name="motDePasse"
-							id="motDePasse">
+							id="motDePasse" required>
 
 					</div>
 					<div class="form-group">
 						<label for="motDePasse">Nouveau mot de passe:</label> <input
 							type="password" class="form-control" name="motDePasse"
-							id="motDePasse" >
+							id="motDePasse" required>
 
 					</div>
 					 <div class="form-group">
@@ -64,25 +64,25 @@
 				<div class="form-droite">
 					<div class="form-group">
 						<label for="nom">Nom:</label> <input type="text"
-							class="form-control" name="nom" id="nom" value="${utilisateur.nom}">
+							class="form-control" name="nom" id="nom" value="${utilisateur.nom}" required>
 					</div>
 					<div class="form-group">
 						<label for="email">Email:</label> <input type="email"
-							class="form-control" name="email" id="email" value="${utilisateur.email}">
+							class="form-control" name="email" id="email" value="${utilisateur.email}" required>
 					</div>
 					<div class="form-group">
 						<label for="rue">Rue:</label> <input type="text"
-							class="form-control" name="rue" id="rue" value="${utilisateur.rue}">
+							class="form-control" name="rue" id="rue" value="${utilisateur.rue}" required>
 					</div>
 					<div class="form-group">
 						<label for="ville">Ville:</label> <input type="text"
-							class="form-control" name="ville" id="ville" value="${utilisateur.ville}">
+							class="form-control" name="ville" id="ville" value="${utilisateur.ville}" required>
 					</div>
 					<div class="divConfirmation">
 					<div class="form-group ">
 						<label for="confirmation">Confirmation:</label> <input
 							type="password" class="form-control" name="confirmation"
-							id="confirmation">
+							id="confirmation" required>
 
 					</div>
 				</div>
