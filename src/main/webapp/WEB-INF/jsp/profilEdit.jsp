@@ -19,7 +19,7 @@
 
 	<h2>Mon profil</h2>
 	<div class="container-formulaire-monProfil">
-		<form action="${pageContext.request.contextPath}/ServletNewUtilisateur"method="post" class="container-fluid mt-2">
+		<form action="${pageContext.request.contextPath}/modifier"method="post" class="container-fluid mt-2">
 			
 			<div class="row justify-content-sm-center">
 				<div class="form-gauche mr-5">
@@ -94,7 +94,7 @@
 
 
 					<input type="submit" class="btn btn-info btn-md mt-3 btn-profil"value="Enregistrer"></input>
-					 <a href="${pageContext.request.contextPath}/ServletProfilDelete"type="submit" class="btn btn-info btn-md mt-3 btn-profil">Supprimer
+					 <a href="${pageContext.request.contextPath}/supprimer"type="submit" class="btn btn-info btn-md mt-3 btn-profil">Supprimer
 						mon compte</a>
 				</div>
 

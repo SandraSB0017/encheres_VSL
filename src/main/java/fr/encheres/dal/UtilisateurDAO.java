@@ -9,5 +9,6 @@ public interface UtilisateurDAO {
 	public Utilisateur selectUtilisateur (int noUtilisateur);
 	public void deleteUtilisateur (int noUtilisateur);
 	public boolean validerPseudo(String pseudo);
+	public Utilisateur  modifierUtilisateur(Utilisateur utilisateur);
 	
 }

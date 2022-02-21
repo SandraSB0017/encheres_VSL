@@ -18,7 +18,7 @@ public class UtilisateurManager {
 		BusinessException businessException = new BusinessException();
 		Utilisateur utilisateur = null;
 
-		if (this.validerUtilisateur(pseudo, businessException)) {
+		if (this.validerUtilisateur(pseudo)) {
 			utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
 			utilisateur.setCredit(0);
 			utilisateur.setAdministrateur(false);
@@ -31,7 +31,7 @@ public class UtilisateurManager {
 		return utilisateur;
 	}
 
-	private boolean validerUtilisateur(String pseudo, BusinessException businessException) {
+	private boolean validerUtilisateur(String pseudo) throws BusinessException {
 		return this.utilisateurDAO.validerPseudo(pseudo);
 	}
 
@@ -49,6 +49,14 @@ public class UtilisateurManager {
 
 	public void supprimerUtilisateur(Utilisateur utilisateur) throws BusinessException {
 		utilisateurDAO.deleteUtilisateur(utilisateur.getNoUtilisateur());
+	}
+
+	public void modifierUtilisateur(Utilisateur utilisateur) throws BusinessException {
+		//BusinessException businessException = new BusinessException();
+		
+			utilisateurDAO.modifierUtilisateur(utilisateur);
+		
+			
 	}
 
 }

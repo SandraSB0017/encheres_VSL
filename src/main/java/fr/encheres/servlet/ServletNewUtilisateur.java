@@ -38,7 +38,6 @@ public class ServletNewUtilisateur extends HttpServlet {
 		String codePostal;
 		String ville;
 		String motDePasse;
-		//Utilisateur newUtilisateur = new Utilisateur();
 		
 			pseudo = request.getParameter("pseudo");
 			nom =request.getParameter("nom");
