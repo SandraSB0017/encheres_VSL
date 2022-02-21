@@ -5,13 +5,14 @@
 <html>
 
 <jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/fragments/footer.html"></jsp:include>
 <link href="css/style-profil.css" rel="stylesheet">
 
 <body>
 
 	<header class="container">
 		<div class="row">
-			<h1 class="col-4"><a class="eniHome" onclick="history.go(-1)">ENI-Enchères</a></h1>
+			<h1><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
 		</div>
 	</header>
 
@@ -83,8 +84,8 @@
 
 		
 		
-		<input type="submit" class="btn btn-info btn-md mt-3 btn-profil" value ="créer"></input>
-		<a href="${pageContext.request.contextPath}/ServletConnexion" type="reset" class="btn btn-info btn-md mt-3 btn-profil">Annuler</a>
+		<input type="submit" class="btn btn-success btn-md mt-3 btn-profil" value ="créer"></input>
+		<a href="${pageContext.request.contextPath}/ServletConnexion" type="reset" class="btn btn-danger btn-md mt-3 btn-profil">Annuler</a>
 			
 	</div>
 	
