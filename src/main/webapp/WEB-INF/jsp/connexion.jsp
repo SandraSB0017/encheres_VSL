@@ -4,10 +4,8 @@
 
 <!DOCTYPE html>
 <html>
-<jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
-<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<link href="css/connexion.css" rel="stylesheet">
+<%@include file="/WEB-INF/fragments/head.html"%>
+
 
 
 <body>
@@ -55,6 +53,6 @@
 		</div>
 	</div>
 
-	<%@ include file="/WEB-INF/fragments/footer.html"%>
+	<%@include file="/WEB-INF/fragments/footer.html"%>
 </body>
 </html>

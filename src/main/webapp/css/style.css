@@ -201,6 +201,39 @@ justify-content: center !important;
 
 
 
+.btn-retour{
+	 width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom:20px ;
+    left: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow:0 0 0 0 #333;
+    background: #17A2B8;
+    border: none;
+   
+}
+   
+
+.logo-btn-rond-accueil{
+    text-align: center;
+    width: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -4,14 +4,13 @@
 <!DOCTYPE html>
 <html>
 
-<jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
-<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="css/style.css" rel="stylesheet">
+<%@include file="/WEB-INF/fragments/head.html"%>
+
 
 <body>
 	<header class="container-fluid">
 		<div class="row col-12">
-			<h1><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
+			<h1 class="col-4"><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
 				<ul class="col-8 nav justify-content-end mt-3">
 					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletConnexion">S'inscrire - Se connecter</a></li>
 				</ul>
@@ -77,6 +76,19 @@
 					</div>
 				</div>
 	</div>
-	<%@ include file="/WEB-INF/fragments/footer.html"%>
+	
+	
+	
+	<a  onclick="history.go(-1)">
+	<div class="btn-retour">
+	<img alt="logo-fleche-retour" src="<%=request.getContextPath()%>/ressources/retour.png"class="logo-btn-rond-accueil">
+	</div>
+	</a> 
+	
+	
+	
+	
+	<%@include file="/WEB-INF/fragments/footer.html"%>
+	
 </body>
 </html>

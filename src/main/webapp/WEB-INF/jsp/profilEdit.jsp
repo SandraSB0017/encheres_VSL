@@ -3,8 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
-<link href="css/style.css" rel="stylesheet">
+<%@include file="/WEB-INF/fragments/head.html"%>
 
 <title>page profil utilisateur</title>
 
@@ -102,19 +101,6 @@
 		</form>
 
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	<%@ include file="/WEB-INF/fragments/footer.html"%>

@@ -4,9 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<jsp:include page="/WEB-INF/fragments/head.jsp"></jsp:include>
-<link href="css/profil.css" rel="stylesheet">
-
+<%@include file="/WEB-INF/fragments/head.html"%>
 
 <body>
 <header class="container-fluid">
