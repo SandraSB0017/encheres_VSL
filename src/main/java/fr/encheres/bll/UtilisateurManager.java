@@ -14,11 +14,12 @@ public class UtilisateurManager {
 	}
 
 	public Utilisateur ajouterUtilisateur(String pseudo, String nom, String prenom, String email, String telephone,
-			String rue, String codePostal, String ville, String motDePasse) throws BusinessException {
+			String rue, String codePostal, String ville, String motDePasse, String confirmation)
+			throws BusinessException {
 		BusinessException businessException = new BusinessException();
 		Utilisateur utilisateur = null;
 
-		if (this.validerUtilisateur(pseudo)) {
+		if (this.validerUtilisateur(pseudo, email, motDePasse, confirmation)) {
 			utilisateur = new Utilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
 			utilisateur.setCredit(0);
 			utilisateur.setAdministrateur(false);
@@ -31,8 +32,14 @@ public class UtilisateurManager {
 		return utilisateur;
 	}
 
-	private boolean validerUtilisateur(String pseudo) throws BusinessException {
-		return this.utilisateurDAO.validerPseudo(pseudo);
+	private boolean validerUtilisateur(String pseudo, String email, String motDePasse, String confirmation)
+			throws BusinessException {
+		boolean valide = false;
+		if (utilisateurDAO.validerPseudo(pseudo) && utilisateurDAO.validerFormatPseudo(pseudo)
+				&& utilisateurDAO.validerEmail(email) && utilisateurDAO.confirmerMdp(motDePasse, confirmation)) {
+			valide = true;
+		}
+		return valide;
 	}
 
 	public Utilisateur selectionnerUtilisateur(String pseudo) throws BusinessException {

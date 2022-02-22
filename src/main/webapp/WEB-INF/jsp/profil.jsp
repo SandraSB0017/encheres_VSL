@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <%@include file="/WEB-INF/fragments/head.html"%>
+<link href="${pageContext.request.contextPath}/css/profil.css" rel="stylesheet">
 
 <body>
 <header class="container-fluid">

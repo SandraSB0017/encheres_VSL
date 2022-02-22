@@ -38,6 +38,7 @@ public class ServletNewUtilisateur extends HttpServlet {
 		String codePostal;
 		String ville;
 		String motDePasse;
+		String confirmation;
 		
 			pseudo = request.getParameter("pseudo");
 			nom =request.getParameter("nom");
@@ -48,15 +49,14 @@ public class ServletNewUtilisateur extends HttpServlet {
 			codePostal = request.getParameter("codePostal");
 			ville = request.getParameter("ville");
 			motDePasse = request.getParameter("motDePasse");
-			
+			confirmation = request.getParameter("confirmation");
 						
 			UtilisateurManager utilisateurManager = new UtilisateurManager();
 			
 			try {
-				utilisateurManager.ajouterUtilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse);
+				utilisateurManager.ajouterUtilisateur(pseudo, nom, prenom, email, telephone, rue, codePostal, ville, motDePasse,confirmation);
 				this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/listeEncheres.jsp").forward(request, response);
 			} catch (BusinessException e) {
-				
 				e.printStackTrace();
 				this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/NewUtilisateur.jsp").forward(request, response);
 			}

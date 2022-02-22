@@ -15,7 +15,8 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String DELETE_UTILISATEUR = "delete from UTILISATEURS where no_utilisateur = ?";
 	private static final String MODIFIER_UTILISATEUR = "update UTILISATEURS set pseudo=?,nom=?,prenom=?,email=?,telephone=?,rue=?,code_postal=?,ville=?,mot_de_passe=? where no_utilisateur = ?";
 	private static final String SELECT_LOGIN = "select * from UTILISATEURS where pseudo=? and mot_de_passe=?";
-
+	private static final String SELECT_BY_EMAIL_UTILISATEUR = "select * from UTILISATEURS where email = ?";
+	
 	@Override
 	public void insertUtilisateur(Utilisateur utilisateur) {
 		try (Connection cnx = ConnectionProvider.getConnection();
@@ -120,7 +121,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	@Override
 	public boolean validerPseudo(String pseudo) {
 		boolean valide = false;
-		Utilisateur utilisateur = new Utilisateur();
 
 		try (Connection cnx = ConnectionProvider.getConnection();
 				PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_PSEUDO_UTILISATEUR)) {
@@ -129,7 +129,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
-					utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
 					valide = false;
 				} else {
 					valide = true;
@@ -177,5 +176,42 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 			e.printStackTrace();
 		}
 		return status;
+	}
+
+	@Override
+	public boolean validerEmail(String email) {
+		boolean valide = false;
+
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_BY_EMAIL_UTILISATEUR)) {
+
+			pstmt.setString(1, email);
+
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs.next()) {
+					valide = false;
+				} else {
+					valide = true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return valide;
+	}
+
+	@Override
+	public boolean validerFormatPseudo(String pseudo) {
+		String pattern = "^[a-zA-Z0-9]*$";
+	    return pseudo.matches(pattern);
+	}
+
+	@Override
+	public boolean confirmerMdp(String motDePasse, String confirmation) {
+		boolean confirmationMdp = false;
+		if(motDePasse.equals(confirmation)) {
+			confirmationMdp = true;
+		}
+		return confirmationMdp;
 	}
 }
