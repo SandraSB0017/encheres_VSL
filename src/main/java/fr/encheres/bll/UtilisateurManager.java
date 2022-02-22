@@ -52,7 +52,11 @@ public class UtilisateurManager {
 	}
 
 	public void modifierUtilisateur(Utilisateur utilisateur) throws BusinessException {
-			utilisateurDAO.modifierUtilisateur(utilisateur);
+		utilisateurDAO.modifierUtilisateur(utilisateur);
+	}
+
+	public boolean validerMdp(String pseudo, String mdp) throws BusinessException {
+		return utilisateurDAO.validerMdp(pseudo, mdp);
 	}
 
 }

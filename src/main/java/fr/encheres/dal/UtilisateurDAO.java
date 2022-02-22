@@ -10,5 +10,6 @@ public interface UtilisateurDAO {
 	public void deleteUtilisateur (int noUtilisateur);
 	public boolean validerPseudo(String pseudo);
 	public Utilisateur  modifierUtilisateur(Utilisateur utilisateur);
+	public boolean validerMdp(String pseudo, String mdp);
 	
 }
