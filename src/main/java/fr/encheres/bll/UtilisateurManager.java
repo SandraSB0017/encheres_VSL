@@ -52,11 +52,7 @@ public class UtilisateurManager {
 	}
 
 	public void modifierUtilisateur(Utilisateur utilisateur) throws BusinessException {
-		//BusinessException businessException = new BusinessException();
-		
 			utilisateurDAO.modifierUtilisateur(utilisateur);
-		
-			
 	}
 
 }

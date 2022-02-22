@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import fr.encheres.bo.Utilisateur;
 
-public class UtilisateurDAOJdbcImpl<vboolean> implements UtilisateurDAO {
+public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 
 	private static final String INSERT_UTILISATEUR = "insert into UTILISATEURS(pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) values(?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String SELECT_BY_PSEUDO_UTILISATEUR = "select * from UTILISATEURS where pseudo = ?";
