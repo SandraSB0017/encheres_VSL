@@ -18,14 +18,14 @@
 
 	<h2>Mon profil</h2>
 	<div class="container-formulaire-monProfil">
-		<form action="${pageContext.request.contextPath}/modifier"method="post" class="container-fluid mt-2">
+		<form method="post" action="${pageContext.request.contextPath}/modifier" class="container-fluid mt-2">
 			
 			<div class="row justify-content-sm-center">
 				<div class="form-gauche mr-5">
 					<div class="form-group">
 						<label for="pseudo">Pseudo:</label> <input type="text"
 							class="form-control" name="pseudo" id="pseudo"
-							 required>${utilisateur.pseudo}
+							 value="${utilisateur.pseudo}" required>
 					</div>
 					<div class="form-group">
 						<label for="prenom">Prénom:</label> <input type="text"
@@ -43,9 +43,9 @@
 							value="${utilisateur.codePostal}" required>
 					</div>
 					<div class="form-group">
-						<label for="motDePasse">Mot de passe:</label> <input
-							type="password" class="form-control" name="motDePasse"
-							id="motDePasse" required>
+						<label for="motDePasseVerifie">Mot de passe:</label> <input
+							type="password" class="form-control" name="motDePasseVerifie"
+							id="motDePasseVerifie" required>
 
 					</div>
 					<div class="form-group">
