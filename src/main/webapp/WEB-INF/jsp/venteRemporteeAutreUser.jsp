@@ -86,13 +86,7 @@
 		</div>
 
 	</div>
-	<a  onclick="history.go(-1)">
-	<div class="btn-retour">
-	<img alt="logo-fleche-retour" src="<%=request.getContextPath()%>/ressources/retour.png"class="logo-btn-rond-accueil">
-	</div>
-	</a> 
-
-
+	<a class="btn-retour" onclick="history.go(-1)"><img alt="logo-fleche-retour" src="<%=request.getContextPath()%>/ressources/retour.png"class="logo-btn-rond-accueil"></a>
 
 	<%@ include file="/WEB-INF/fragments/footer.html"%>
 
