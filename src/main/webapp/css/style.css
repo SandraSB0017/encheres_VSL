@@ -219,7 +219,9 @@ justify-content: center !important;
     text-align: center;
     width: 35px;
 }
-
+input:invalid {
+  background-color: #ffdddd;
+}
 
 
 

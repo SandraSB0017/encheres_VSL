@@ -25,7 +25,7 @@
 					<div class="form-group">
 						<label for="pseudo">Pseudo:</label> <input type="text"
 							class="form-control" name="pseudo" id="pseudo"
-							value="${utilisateur.pseudo}" required>
+							 required>${utilisateur.pseudo}
 					</div>
 					<div class="form-group">
 						<label for="prenom">Prénom:</label> <input type="text"
@@ -51,7 +51,7 @@
 					<div class="form-group">
 						<label for="motDePasse">Nouveau mot de passe:</label> <input
 							type="password" class="form-control" name="motDePasse"
-							id="motDePasse" required>
+							id="motDePasse">
 
 					</div>
 					 <div class="form-group">
@@ -81,7 +81,7 @@
 					<div class="form-group ">
 						<label for="confirmation">Confirmation:</label> <input
 							type="password" class="form-control" name="confirmation"
-							id="confirmation" required>
+							id="confirmation">
 
 					</div>
 				</div>
@@ -92,7 +92,7 @@
 
 
 
-					<input type="submit" class="btn btn-info btn-md mt-3 btn-profil"value="Enregistrer"></input>
+					<input type="submit" class="btn btn-info btn-md mt-3 btn-profil" value="Enregistrer Modification"> <a href="${pageContext.request.contextPath}/modifier"></a></input>
 					 <a href="${pageContext.request.contextPath}/supprimer"type="submit" class="btn btn-info btn-md mt-3 btn-profil">Supprimer
 						mon compte</a>
 				</div>

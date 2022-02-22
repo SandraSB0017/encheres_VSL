@@ -25,7 +25,7 @@
 					<div class="form-group">
 						<label for="pseudo">Pseudo:</label> <input type="text"
 							class="form-control" name="pseudo" id="pseudo"
-							placeholder="pseudo" required>
+							placeholder="pseudo" required pattern="^[a-zA-Z0-9]*$">
 					</div>
 					<div class="form-group">
 						<label for="prenom">Prénom:</label> <input type="text"
@@ -35,7 +35,7 @@
 					<div class="form-group">
 						<label for="telephone">Téléphone:</label> <input type="tel"
 							class="form-control" name="telephone" id="telephone"
-							placeholder="telephone" required>
+							placeholder="telephone" required pattern="[0-9]{10}">
 					</div>
 					<div class="form-group">
 						<label for="codePostal">Code postal:</label> <input type="text"
@@ -82,7 +82,7 @@
 
 		
 		
-		<input type="submit" class="btn btn-success btn-md mt-3 btn-profil" value ="créer"></input>
+		<input type="submit" class="btn btn-success btn-md mt-3 btn-profil" value ="Créer"></input>
 		<a href="${pageContext.request.contextPath}/ServletConnexion" type="reset" class="btn btn-danger btn-md mt-3 btn-profil">Annuler</a>
 			
 	</div>
