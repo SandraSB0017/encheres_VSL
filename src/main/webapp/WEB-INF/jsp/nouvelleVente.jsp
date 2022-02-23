@@ -24,20 +24,20 @@
 			<div class="row mt-5">
 				<article class="col-md-3"></article>
 				<article class="col-md-7">
-					<form method="post" action="">
+					<form method="post" action="${pageContext.request.contextPath}/ServletNouvelleVente">
 						<div class="row">
 							<div class="col-md-3">
-								<label for="article" class="text">Article</label>
+								<label for="nomArticle" name="nomArticle" class="text">Article</label>
 							</div>
 							<div class="col-md-7">
-								<input type="text" class="form-control" id="article"
+								<input type="text" class="form-control" id="nomArticle" name="nomArticle"
 									aria-describedby="nomArticle">
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-md-3">
-								<label for="article" class="text">Description</label>
+								<label for="description" name="description" class="text">Description</label>
 							</div>
 							<div class="col-md-7">
 								<textarea style="resize: none" name="description" rows="5"
@@ -47,10 +47,10 @@
 						<br>
 						<div class="row">
 							<div class="col-md-3">
-								<label for="article" class="text">Catégorie</label>
+								<label for="noCategorie" name="noCategorie" class="text">Catégorie</label>
 							</div>
 							<div class="col-md-7">
-								<select id="categorie" name="categorie" size="1"
+								<select id="noCategorie" name="noCategorie" size="1"
 									class="fld-field">
 
 									<option>Maison</option>
@@ -79,28 +79,28 @@
 						<br>
 						<div class="row">
 							<div class="col-md-3">
-								<label for="article" class="text">Mise à prix</label>
+								<label for="prixInitial" name="prixInitial" class="text">Mise à prix</label>
 							</div>
 							<div class="col-md-7">
-								<input type="number" class="form-control" id="prix">
+								<input type="number" class="form-control" id="prixVente" name="prixInitial">
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-md-3">
-								<label for="article" class="text">Début de l'enchère</label>
+								<label for="dateDebutEncheres" name="dateDebutEncheres" class="text">Début de l'enchère</label>
 							</div>
 							<div class="col-md-7">
-								<input type="date" class="form-control" id="debutEnchere">
+								<input type="date" class="form-control" id="dateDebutEncheres" name="dateDebutEncheres">
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-md-3">
-								<label for="article" class="text">Fin de l'enchère</label>
+								<label for="dateFinEncheres" name="dateFinEncheres" class="text">Fin de l'enchère</label>
 							</div>
 							<div class="col-md-7">
-								<input type="date" class="form-control" id="finEnchere">
+								<input type="date" class="form-control" id="finEnchere" name="dateFinEncheres">
 							</div>
 						</div>
 						<br>
@@ -118,25 +118,25 @@
 														<label for="rue" class="label1 "> Rue :</label>
 													</div>
 													<div class="col-9">
-														<input type="text" class="form-control" id="nomRue">
+														<input type="text" class="form-control" id="rue" name="rue">
 													</div>
 													</div>
 													<br>
 													<div class="row col-md-12 form-row text-center">
 													<div class="col-3">
-														<label for="rue" class="label2 "> Code postal :</label>
+														<label for="codePostal" class="label2 "> Code postal :</label>
 													</div>
 													<div class="col-9">
-														<input type="text" class="form-control" id="numCP">
+														<input type="text" class="form-control" id="codePostal" name="codePostal">
 													</div>
 													</div>
 													<br>
 													<div class="row col-md-12 form-row text-center">
 													<div class="col-3">
-														<label for="rue" class="label3 "> Ville :</label>
+														<label for="ville" class="label3 "> Ville :</label>
 													</div>
 													<div class="col-9">
-														<input type="text" class="form-control" id="nomVille">
+														<input type="text" class="form-control" id="ville" name="ville">
 													</div>
 													</div>
 													<br>

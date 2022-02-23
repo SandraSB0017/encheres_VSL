@@ -3,6 +3,7 @@ package fr.encheres.bo;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDate;
 
 	public class ArticlesVendus implements Serializable {
 		
@@ -12,8 +13,8 @@ import java.sql.Date;
 		private int noArticle;
 		private String nomArticle;
 		private String description;
-		private Date dateDebutEncheres;
-		private Date dateFinEncheres;
+		private LocalDate dateDebutEncheres;
+		private LocalDate dateFinEncheres;
 		private int prixInitial;
 		private int prixVente;
 		private int noUtilisateur;
@@ -62,25 +63,25 @@ import java.sql.Date;
 		/**
 		 * @return the dateDebutEncheres
 		 */
-		public Date getDateDebutEncheres() {
+		public LocalDate getDateDebutEncheres() {
 			return dateDebutEncheres;
 		}
 		/**
 		 * @param dateDebutEncheres the dateDebutEncheres to set
 		 */
-		public void setDateDebutEncheres(Date dateDebutEncheres) {
+		public void setDateDebutEncheres(LocalDate dateDebutEncheres) {
 			this.dateDebutEncheres = dateDebutEncheres;
 		}
 		/**
 		 * @return the dateFinEncheres
 		 */
-		public Date getDateFinEncheres() {
+		public LocalDate getDateFinEncheres() {
 			return dateFinEncheres;
 		}
 		/**
 		 * @param dateFinEncheres the dateFinEncheres to set
 		 */
-		public void setDateFinEncheres(Date dateFinEncheres) {
+		public void setDateFinEncheres(LocalDate dateFinEncheres) {
 			this.dateFinEncheres = dateFinEncheres;
 		}
 		/**
@@ -148,8 +149,8 @@ import java.sql.Date;
 		 * @param noUtilisateur
 		 * @param noCategorie
 		 */
-		public ArticlesVendus(int noArticle, String nomArticle, String description, Date dateDebutEncheres,
-				Date dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
+		public ArticlesVendus(int noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
+				LocalDate dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
 			super();
 			this.noArticle = noArticle;
 			this.nomArticle = nomArticle;
@@ -171,7 +172,7 @@ import java.sql.Date;
 		 * @param noUtilisateur
 		 * @param noCategorie
 		 */
-		public ArticlesVendus(String nomArticle, String description, Date dateDebutEncheres, Date dateFinEncheres,
+		public ArticlesVendus(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres,
 				int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
 			super();
 			this.nomArticle = nomArticle;
@@ -182,6 +183,10 @@ import java.sql.Date;
 			this.prixVente = prixVente;
 			this.noUtilisateur = noUtilisateur;
 			this.noCategorie = noCategorie;
+		}
+		public ArticlesVendus(String nomArticle, String description, int prixInitial, int noCategorie) {
+			
+
 		}
 		@Override
 		public String toString() {
