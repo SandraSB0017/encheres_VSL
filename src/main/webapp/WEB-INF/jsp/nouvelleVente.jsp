@@ -47,10 +47,10 @@
 						<br>
 						<div class="row">
 							<div class="col-md-3">
-								<label for="noCategorie" name="noCategorie" class="text">Catégorie</label>
+								<label for="libelleCategorie" name="libelleCategorie" class="text">Catégorie</label>
 							</div>
 							<div class="col-md-7">
-								<select id="noCategorie" name="noCategorie" size="1"
+								<select id="libelleCategorie" name="libelleCategorie" size="1"
 									class="fld-field">
 
 									<option>Maison</option>

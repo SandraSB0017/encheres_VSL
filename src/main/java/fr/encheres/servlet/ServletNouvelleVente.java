@@ -2,6 +2,7 @@ package fr.encheres.servlet;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.encheres.bll.ArticleManager;
+import fr.encheres.bll.CategorieManager;
 import fr.encheres.exception.BusinessException;
 
 /**
@@ -50,7 +52,7 @@ public class ServletNouvelleVente extends HttpServlet {
 		String rue;
 		int codePostal;
 		String ville;
-		int noCategorie = 1;
+		String libelleCategorie;
 		int noUtilisateur = (int) session.getAttribute("noUtilisateur");
 
 		nomArticle = request.getParameter("nomArticle");
@@ -61,14 +63,17 @@ public class ServletNouvelleVente extends HttpServlet {
 		// rue = request.getParameter("rue");
 		// codePostal=Integer.parseInt(request.getParameter("codePostal"));
 		// ville = request.getParameter("ville");
-		// noCategorie=Integer.parseInt(request.getParameter("noCategorie"));
-
+		libelleCategorie=request.getParameter("libelleCategorie");
 		ArticleManager articleManager = new ArticleManager();
+		CategorieManager categorieManager = new CategorieManager();
 
 		try {
+			
+			int noCategorie = categorieManager.selectCategorie(libelleCategorie);
+			System.out.println("noCategorie" + noCategorie);
 			articleManager.ajouterArticle(nomArticle, description, prixInitial, noUtilisateur, noCategorie);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/listeEncheres.jsp").forward(request, response);
-		} catch (BusinessException e) {
+		} catch (BusinessException | SQLException e) {
 			e.printStackTrace();
 			this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/nouvelleVente.jsp").forward(request, response);
 		}

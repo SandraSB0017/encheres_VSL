@@ -31,7 +31,8 @@ public class ArticleManager {
 		article.setNoCategorie(1);
 
 		this.articleDAO.insertArticle(article);
-
 		return article;
 	}
+	
+	
 }
