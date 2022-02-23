@@ -15,14 +15,14 @@ public class ArticleManager {
 		this.articleDAO = DAOFactory.getArticleDAO();
 	}
 
-	public ArticlesVendus ajouterArticle(String nomArticle, String description, java.util.Date dateDebutEncheres, int prixInitial, int noUtilisateur,
+	public ArticlesVendus ajouterArticle(String nomArticle, String description, String dateDebutEncheresSaisies, int prixInitial, int noUtilisateur,
 			int noCategorie) throws BusinessException {
 		BusinessException businessException = new BusinessException();
 
 		ArticlesVendus article = null;
 
 		article = new ArticlesVendus(nomArticle, description, prixInitial, noCategorie);
-		article.setDateDebutEncheres(dateDebutEncheres);
+		article.setDateDebutEncheres(dateDebutEncheresSaisies);
 		// article.setDateFinEncheres(LocalDate.now());
 		article.setNomArticle(nomArticle);
 		article.setDescription(description);

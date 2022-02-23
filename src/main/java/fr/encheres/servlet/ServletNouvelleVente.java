@@ -47,7 +47,7 @@ public class ServletNouvelleVente extends HttpServlet {
 
 		String nomArticle;
 		String description;
-		//Date dateDebutEncheres;
+		String dateDebutEncheres;
 		//Date dateFinEncheres;
 		int prixInitial;
 		int PrixVente;
@@ -59,23 +59,13 @@ public class ServletNouvelleVente extends HttpServlet {
 
 		nomArticle = request.getParameter("nomArticle");
 		description = request.getParameter("description");
-		
-		String dateDebutEncheresSaisies= request.getParameter("dateDebutEncheres");
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		java.util.Date dateDebutEncheres = null;
-		try {
-			dateDebutEncheres = format.parse(dateDebutEncheresSaisies);
-			System.out.println("date " + dateDebutEncheres);
-		
-		} catch (ParseException e1) {
-			e1.printStackTrace();
-		}
-		
+		dateDebutEncheres= request.getParameter("dateDebutEncheres");
 		// dateFinEncheres = request.getParameter("dateFinEncheres");
 		prixInitial = Integer.parseInt(request.getParameter("prixInitial"));
 		// rue = request.getParameter("rue");
 		// codePostal=Integer.parseInt(request.getParameter("codePostal"));
 		// ville = request.getParameter("ville");
+		
 		libelleCategorie=request.getParameter("libelleCategorie");
 		ArticleManager articleManager = new ArticleManager();
 		CategorieManager categorieManager = new CategorieManager();

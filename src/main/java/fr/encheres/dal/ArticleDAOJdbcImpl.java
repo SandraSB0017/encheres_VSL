@@ -19,7 +19,7 @@ public void insertArticle (ArticlesVendus article) {
 					PreparedStatement.RETURN_GENERATED_KEYS)) {
 		pstmt.setString(1, article.getNomArticle());
 		pstmt.setString(2, article.getDescription());
-		pstmt.setDate(3, (Date) article.getDateDebutEncheres());
+		pstmt.setString(3, article.getDateDebutEncheres());
 		//pstmt.setDate(4, article.getDateFinEncheres());
 		pstmt.setInt(4, article.getPrixInitial());
 		//pstmt.setInt(6, article.getPrixVente());
