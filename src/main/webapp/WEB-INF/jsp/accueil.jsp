@@ -25,10 +25,10 @@
 					<label for="username" class="text-info">Filtres :</label><br>
 					<input type="text" name="recherche" id="recherche" class="recherche" placeholder="Le nom de l'article contient" size="50">
 					<div class="row mt-2">
-						<div class="col-md-5">
+						<div class="col-md-6">
 							<label for="article" class="text ">Catégorie :</label>
 						</div>
-						<div class="col-md-7">
+						<div class="col-md-6">
 							<select id="categorie" name="categorie" size="1"  class="fld-field">
 								<option>Toutes</option>
 								<option>Maison</option>
