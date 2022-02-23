@@ -1,7 +1,5 @@
 package fr.encheres.bll;
 
-import java.sql.Date;
-import java.time.LocalDate;
 
 import fr.encheres.bo.ArticlesVendus;
 import fr.encheres.dal.ArticleDAO;
