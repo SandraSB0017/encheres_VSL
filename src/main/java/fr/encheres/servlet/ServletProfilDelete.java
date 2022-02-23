@@ -64,7 +64,9 @@ public class ServletProfilDelete extends HttpServlet {
 			String rue;
 			String codePostal;
 			String ville;
-			// String motDePasse;
+			String motDePasse;
+			String confirmation;
+			
 			int noUtilisateur = (int) session.getAttribute("noUtilisateur");
 			pseudo = request.getParameter("pseudo");
 			nom = request.getParameter("nom");
@@ -74,7 +76,8 @@ public class ServletProfilDelete extends HttpServlet {
 			rue = request.getParameter("rue");
 			codePostal = request.getParameter("codePostal");
 			ville = request.getParameter("ville");
-			// motDePasse = request.getParameter("motDePasse");
+			motDePasse = request.getParameter("motDePasse");
+			confirmation = request.getParameter("confirmation");
 
 			try {
 				utilisateur = new UtilisateurManager().selectionnerUtilisateur(noUtilisateur);
@@ -91,8 +94,9 @@ public class ServletProfilDelete extends HttpServlet {
 			utilisateur.setRue(rue);
 			utilisateur.setCodePostal(codePostal);
 			utilisateur.setVille(ville);
-			// utilisateur.setMotDePasse(motDePasse);
-
+			if (motDePasse != null && motDePasse.equals(confirmation)) {
+			utilisateur.setMotDePasse(motDePasse);
+			}
 			try {
 				new UtilisateurManager().modifierUtilisateur(utilisateur);
 			} catch (BusinessException e) {
