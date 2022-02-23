@@ -58,7 +58,7 @@
 					        <label for="prix" class="prix "> Prix :</label><br>
 					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
 					        <label for="vendeur" name="vendeur"  class="vendeur "> Vendeur : 
-					<a id="vendeur" name="vendeur" href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur"><input id= "vendeur" value="jojo44"/></a></label>
+					<a id="vendeur" name="vendeur" href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur">jojo44</a></label>
 				
 					      </div>
 					    </div>

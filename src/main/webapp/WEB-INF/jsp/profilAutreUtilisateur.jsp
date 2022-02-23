@@ -32,7 +32,7 @@
 				<div id="login-column" class="col-md-6">
 					<div id="login-box" class="col-md-12">
 						<form id="login-form" class="form" action="" method="post">
-							<h3 class="text-center text-info">Mon profil</h3>
+							<h3 class="text-center text-info">Profil vendeur</h3>
 							<div class="form-group ">
 								<div class="row col-md-12 form-row text-center">
 									<div class="col-12 mt-4">
