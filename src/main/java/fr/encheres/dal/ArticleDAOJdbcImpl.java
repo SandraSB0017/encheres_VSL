@@ -1,6 +1,7 @@
 package fr.encheres.dal;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,7 +9,7 @@ import java.sql.SQLException;
 import fr.encheres.bo.ArticlesVendus;
 
 public class ArticleDAOJdbcImpl implements ArticleDAO {
-	private static final String INSERT_ARTICLE = "insert into ARTICLES_VENDUS (nom_article,description,prix_initial,no_utilisateur, no_categorie) values(?,?,?,?,?)";
+	private static final String INSERT_ARTICLE = "insert into ARTICLES_VENDUS (nom_article,description,date_debut_encheres,prix_initial,no_utilisateur, no_categorie) values(?,?,?,?,?,?)";
 
 
 @Override
@@ -18,12 +19,12 @@ public void insertArticle (ArticlesVendus article) {
 					PreparedStatement.RETURN_GENERATED_KEYS)) {
 		pstmt.setString(1, article.getNomArticle());
 		pstmt.setString(2, article.getDescription());
-		//pstmt.setDate(3, article.getDateDebutEncheres());
+		pstmt.setDate(3, (Date) article.getDateDebutEncheres());
 		//pstmt.setDate(4, article.getDateFinEncheres());
-		pstmt.setInt(3, article.getPrixInitial());
+		pstmt.setInt(4, article.getPrixInitial());
 		//pstmt.setInt(6, article.getPrixVente());
-		pstmt.setInt(4, article.getNoUtilisateur());
-		pstmt.setInt(5, article.getNoCategorie());
+		pstmt.setInt(5, article.getNoUtilisateur());
+		pstmt.setInt(6, article.getNoCategorie());
 		pstmt.executeUpdate();
 		
 		try (ResultSet rs = pstmt.getGeneratedKeys()) {

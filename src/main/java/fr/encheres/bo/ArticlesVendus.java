@@ -13,7 +13,7 @@ import java.time.LocalDate;
 		private int noArticle;
 		private String nomArticle;
 		private String description;
-		private LocalDate dateDebutEncheres;
+		private java.util.Date dateDebutEncheres;
 		private LocalDate dateFinEncheres;
 		private int prixInitial;
 		private int prixVente;
@@ -63,14 +63,14 @@ import java.time.LocalDate;
 		/**
 		 * @return the dateDebutEncheres
 		 */
-		public LocalDate getDateDebutEncheres() {
+		public java.util.Date getDateDebutEncheres() {
 			return dateDebutEncheres;
 		}
 		/**
-		 * @param dateDebutEncheres the dateDebutEncheres to set
+		 * @param dateDebutEncheres2 the dateDebutEncheres to set
 		 */
-		public void setDateDebutEncheres(LocalDate dateDebutEncheres) {
-			this.dateDebutEncheres = dateDebutEncheres;
+		public void setDateDebutEncheres(java.util.Date dateDebutEncheres2) {
+			this.dateDebutEncheres = dateDebutEncheres2;
 		}
 		/**
 		 * @return the dateFinEncheres
@@ -149,7 +149,7 @@ import java.time.LocalDate;
 		 * @param noUtilisateur
 		 * @param noCategorie
 		 */
-		public ArticlesVendus(int noArticle, String nomArticle, String description, LocalDate dateDebutEncheres,
+		public ArticlesVendus(int noArticle, String nomArticle, String description, java.util.Date dateDebutEncheres,
 				LocalDate dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
 			super();
 			this.noArticle = noArticle;
@@ -172,7 +172,7 @@ import java.time.LocalDate;
 		 * @param noUtilisateur
 		 * @param noCategorie
 		 */
-		public ArticlesVendus(String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres,
+		public ArticlesVendus(String nomArticle, String description, java.util.Date dateDebutEncheres, LocalDate dateFinEncheres,
 				int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
 			super();
 			this.nomArticle = nomArticle;

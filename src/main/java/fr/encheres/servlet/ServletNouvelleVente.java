@@ -3,6 +3,8 @@ package fr.encheres.servlet;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,8 +47,8 @@ public class ServletNouvelleVente extends HttpServlet {
 
 		String nomArticle;
 		String description;
-		Date dateDebutEncheres;
-		Date dateFinEncheres;
+		//Date dateDebutEncheres;
+		//Date dateFinEncheres;
 		int prixInitial;
 		int PrixVente;
 		String rue;
@@ -57,7 +59,18 @@ public class ServletNouvelleVente extends HttpServlet {
 
 		nomArticle = request.getParameter("nomArticle");
 		description = request.getParameter("description");
-		// dateDebutEncheres = (Date)request.getParameter("dateDebutEncheres");
+		
+		String dateDebutEncheresSaisies= request.getParameter("dateDebutEncheres");
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date dateDebutEncheres = null;
+		try {
+			dateDebutEncheres = format.parse(dateDebutEncheresSaisies);
+			System.out.println("date " + dateDebutEncheres);
+		
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
+		
 		// dateFinEncheres = request.getParameter("dateFinEncheres");
 		prixInitial = Integer.parseInt(request.getParameter("prixInitial"));
 		// rue = request.getParameter("rue");
@@ -70,8 +83,7 @@ public class ServletNouvelleVente extends HttpServlet {
 		try {
 			
 			int noCategorie = categorieManager.selectCategorie(libelleCategorie);
-			System.out.println("noCategorie" + noCategorie);
-			articleManager.ajouterArticle(nomArticle, description, prixInitial, noUtilisateur, noCategorie);
+			articleManager.ajouterArticle(nomArticle, description,dateDebutEncheres, prixInitial, noUtilisateur, noCategorie);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/listeEncheres.jsp").forward(request, response);
 		} catch (BusinessException | SQLException e) {
 			e.printStackTrace();
