@@ -1,8 +1,5 @@
 package fr.encheres.bll;
 
-import java.sql.Date;
-import java.time.LocalDate;
-
 import fr.encheres.bo.ArticlesVendus;
 import fr.encheres.dal.ArticleDAO;
 import fr.encheres.dal.DAOFactory;
@@ -15,8 +12,8 @@ public class ArticleManager {
 		this.articleDAO = DAOFactory.getArticleDAO();
 	}
 
-	public ArticlesVendus ajouterArticle(String nomArticle, String description, java.util.Date dateDebutEncheres, int prixInitial, int noUtilisateur,
-			int noCategorie) throws BusinessException {
+	public ArticlesVendus ajouterArticle(String nomArticle, String description, String dateDebutEncheres,
+			int prixInitial, int noUtilisateur, int noCategorie) throws BusinessException {
 		BusinessException businessException = new BusinessException();
 
 		ArticlesVendus article = null;
@@ -29,11 +26,9 @@ public class ArticleManager {
 		article.setNoUtilisateur(noUtilisateur);
 		article.setPrixInitial(prixInitial);
 		article.setNoCategorie(noCategorie);
-	
 
 		this.articleDAO.insertArticle(article);
 		return article;
 	}
-	
-	
+
 }

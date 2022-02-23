@@ -13,8 +13,8 @@ import java.time.LocalDate;
 		private int noArticle;
 		private String nomArticle;
 		private String description;
-		private java.util.Date dateDebutEncheres;
-		private LocalDate dateFinEncheres;
+		private String dateDebutEncheres;
+		private String dateFinEncheres;
 		private int prixInitial;
 		private int prixVente;
 		private int noUtilisateur;
@@ -63,25 +63,25 @@ import java.time.LocalDate;
 		/**
 		 * @return the dateDebutEncheres
 		 */
-		public java.util.Date getDateDebutEncheres() {
+		public String getDateDebutEncheres() {
 			return dateDebutEncheres;
 		}
 		/**
 		 * @param dateDebutEncheres2 the dateDebutEncheres to set
 		 */
-		public void setDateDebutEncheres(java.util.Date dateDebutEncheres2) {
+		public void setDateDebutEncheres(String dateDebutEncheres2) {
 			this.dateDebutEncheres = dateDebutEncheres2;
 		}
 		/**
 		 * @return the dateFinEncheres
 		 */
-		public LocalDate getDateFinEncheres() {
+		public String getDateFinEncheres() {
 			return dateFinEncheres;
 		}
 		/**
 		 * @param dateFinEncheres the dateFinEncheres to set
 		 */
-		public void setDateFinEncheres(LocalDate dateFinEncheres) {
+		public void setDateFinEncheres(String dateFinEncheres) {
 			this.dateFinEncheres = dateFinEncheres;
 		}
 		/**
@@ -149,8 +149,8 @@ import java.time.LocalDate;
 		 * @param noUtilisateur
 		 * @param noCategorie
 		 */
-		public ArticlesVendus(int noArticle, String nomArticle, String description, java.util.Date dateDebutEncheres,
-				LocalDate dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
+		public ArticlesVendus(int noArticle, String nomArticle, String description, String dateDebutEncheres,
+				String dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
 			super();
 			this.noArticle = noArticle;
 			this.nomArticle = nomArticle;
@@ -172,7 +172,7 @@ import java.time.LocalDate;
 		 * @param noUtilisateur
 		 * @param noCategorie
 		 */
-		public ArticlesVendus(String nomArticle, String description, java.util.Date dateDebutEncheres, LocalDate dateFinEncheres,
+		public ArticlesVendus(String nomArticle, String description, String dateDebutEncheres, String dateFinEncheres,
 				int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
 			super();
 			this.nomArticle = nomArticle;
