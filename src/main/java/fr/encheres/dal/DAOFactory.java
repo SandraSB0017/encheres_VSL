@@ -12,5 +12,7 @@ public static ArticleDAO getArticleDAO() {
 		return new ArticleDAOJdbcImpl();
 
 }
+	
+
 }
 
