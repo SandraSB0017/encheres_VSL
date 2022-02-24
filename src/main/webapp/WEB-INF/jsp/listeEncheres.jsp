@@ -31,10 +31,10 @@
 					<label for="username" class="text-info">Filtres :</label><br>
 					<input type="text" name="recherche" id="recherche" class="recherche" placeholder="Le nom de l'article contient" size="50">
 					<div class="row mt-2">
-						<div class="col-md-5">
+						<div class="col-md-6">
 							<label for="article" class="text ">Catégorie :</label>
 						</div>
-						<div class="col-md-7">
+						<div class="col-md-6">
 							<select id="categorie" name="categorie" size="1"  class="fld-field">
 								<option>Toutes</option>
 								<option>Maison</option>
@@ -115,6 +115,30 @@
 					</div>
 				</div>
 			</div>
+			<div id="cards">
+			<div class="row">
+				<c:forEach items="${listeArticle}" var="article">  
+					<div class="col-sm-6">
+						<div class="card mb-3">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="${pageContext.request.contextPath}/ServletDetailVente?noArticle=${article.noArticle}"><span>
+											${article.nomArticle}</span></a>
+								</h5>
+								<label for="prix" class="prix "> Prix :<span>
+										${article.prixInitial}</span></label><br> <label for="finEnchere"
+									class="finEnchere "> Fin de l'enchère :<span>${article.dateFinEncheres}</span></label><br>
+								<label for="vendeur" name="vendeur" class="vendeur ">
+									Vendeur : <a id="vendeur" name="vendeur"
+									href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur?noUtilisateur=${article.noUtilisateur}"><span>${article.noUtilisateur} ${utilisateur.pseudo }</span></a>
+								</label>
+	
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
 		</div>
 		<a class="btn-retour" onclick="history.go(-1)"><img alt="logo-fleche-retour" src="<%=request.getContextPath()%>/ressources/retour.png"class="logo-btn-rond-accueil"></a>
 		

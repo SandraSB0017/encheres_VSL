@@ -25,11 +25,22 @@
 					href="http://localhost:8080/encheres_VSL/ServletAccueil"
 					rel="stylesheet">ENI-Enchères</a>
 			</h1>
+			<c:if test="${empty sessionScope}" >
 			<ul class="col-8 nav justify-content-end mt-3">
+			
 				<li class="nav-item"><a class="nav-link"
 					href="${pageContext.request.contextPath}/ServletConnexion">S'inscrire
 						- Se connecter</a></li>
 			</ul>
+			</c:if>
+			<c:if test="${not empty sessionScope}">
+			<ul class="col-8 nav justify-content-end mt-3">
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletNouvelleVente">Enchères</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletNouvelleVente">Vendre un article</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletProfil">Bonjour ${ sessionScope.pseudo }</a></li>
+				<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/ServletDeconnexion">Déconnexion</a></li>
+			</ul>
+			</c:if>
 		</div>
 	</header>
 
