@@ -4,8 +4,6 @@
 
 <!DOCTYPE html>
 <html>
-	<meta charset="UTF-8">
-<link href="${pageContext.request.contextPath}/css/profil.css" rel="stylesheet">
 <head>
     <!-- Bootstrap core CSS -->
   <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
