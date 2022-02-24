@@ -72,40 +72,26 @@
 		</div>
 		<div id="cards">
 			<div class="row">
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">
-								<a href="${pageContext.request.contextPath}/ServletDetailVente"><span>
-										${article.nomArticle}</span></a>
-							</h5>
-							<label for="prix" class="prix "> Prix :<span>
-									${article.prixInitial}</span></label><br> <label for="finEnchere"
-								class="finEnchere "> Fin de l'enchère :<span>${article.dateFinEncheres}</span></label><br>
-							<label for="vendeur" name="vendeur" class="vendeur ">
-								Vendeur : <a id="vendeur" name="vendeur"
-								href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur"><span>${utilisateur.pseudo}</span></a>
-							</label>
-
+				<c:forEach items="${listeArticle}" var="article">  
+					<div class="col-sm-6">
+						<div class="card mb-3">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="${pageContext.request.contextPath}/ServletDetailVente"><span>
+											${article.nomArticle}</span></a>
+								</h5>
+								<label for="prix" class="prix "> Prix :<span>
+										${article.prixInitial}</span></label><br> <label for="finEnchere"
+									class="finEnchere "> Fin de l'enchère :<span>${article.dateFinEncheres}</span></label><br>
+								<label for="vendeur" name="vendeur" class="vendeur ">
+									Vendeur : <a id="vendeur" name="vendeur"
+									href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur"><span>${utilisateur.pseudo}</span></a>
+								</label>
+	
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-6">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">
-								<a href="${pageContext.request.contextPath}/ServletDetailVente">Rocket
-									stove pour riz et pâtes</a>
-							</h5>
-							<label for="prix" class="prix "> Prix :</label><br> <label
-								for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
-							<label for="vendeur" name="vendeur" class="vendeur ">
-								Vendeur : <a
-								href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur">NineJea</a>
-							</label>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

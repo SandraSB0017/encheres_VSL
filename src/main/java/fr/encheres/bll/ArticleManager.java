@@ -1,6 +1,8 @@
 package fr.encheres.bll;
 
 
+import java.util.List;
+
 import fr.encheres.bo.ArticlesVendus;
 import fr.encheres.dal.ArticleDAO;
 import fr.encheres.dal.DAOFactory;
@@ -35,6 +37,12 @@ public class ArticleManager {
 
 	public ArticlesVendus selectionnerArticle(int noArticle) {
 		return this.articleDAO.selectArticle(noArticle);
+	}
+
+	public List<ArticlesVendus> selectAllArticle() {
+		List<ArticlesVendus> listeArticle = null;
+		listeArticle = articleDAO.selectAll();
+		return listeArticle;
 	}
 	
 	
