@@ -49,9 +49,13 @@ public class ArticleDAOJdbcImpl implements ArticleDAO {
 			try (ResultSet rs = pstmt.executeQuery()) {
 				while(rs.next()) {
 					article.setNomArticle(rs.getString("nom_article"));
-					article.setPrixInitial(rs.getInt("prix_initial"));
+					article.setDescription(rs.getString("description"));
+					article.setDateDebutEncheres(rs.getString("date_debut_encheres"));
 					article.setDateFinEncheres(rs.getString("date_fin_encheres"));
+					article.setPrixInitial(rs.getInt("prix_initial"));
+					article.setPrixVente(rs.getInt("prix_vente"));
 					article.setNoUtilisateur(rs.getInt("no_utilisateur"));
+					article.setNoCategorie(rs.getInt("no_categorie"));
 				}
 			}
 		} catch (SQLException e) {

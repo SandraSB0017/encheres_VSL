@@ -24,20 +24,16 @@ public class ServletProfilAutreUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String  pseudo;
-		pseudo = request.getParameter("vendeur");
-		System.out.println(pseudo);
+		int noUtilisateur=Integer.parseInt(request.getParameter("noUtilisateur"));
 		UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur utilisateur;
-
 		try {
-			utilisateur = utilisateurManager.selectionnerUtilisateur(pseudo);
+			utilisateur = utilisateurManager.selectionnerUtilisateur(noUtilisateur);
 			request.setAttribute("utilisateur", utilisateur);
 		} catch (BusinessException e) {
 			e.printStackTrace();
 		}
 		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/profilAutreUtilisateur.jsp").forward(request, response);
-	
 	}
 		
 

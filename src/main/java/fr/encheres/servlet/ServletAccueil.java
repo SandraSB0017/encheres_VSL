@@ -1,6 +1,7 @@
 package fr.encheres.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -10,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 import fr.encheres.bll.ArticleManager;
 import fr.encheres.bll.UtilisateurManager;
@@ -52,7 +52,7 @@ public class ServletAccueil extends HttpServlet {
 		}*/
 		List<ArticlesVendus>listeArticle = new ArticleManager().selectAllArticle();
 		request.setAttribute("listeArticle", listeArticle);
-		UtilisateurManager utilisateurManager = new UtilisateurManager();
+		/*UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur utilisateur = null;
 		ArticlesVendus article = null;
 		int i=0;
@@ -69,7 +69,21 @@ public class ServletAccueil extends HttpServlet {
 			}
 			
 			request.setAttribute("utilisateur", utilisateur);
-		}
+		}*/
+		/*for(ArticlesVendus article : listeArticle) {
+			List<Utilisateur> listeUtilisateurs = new ArrayList<Utilisateur>();
+			UtilisateurManager utilisateurManager = new UtilisateurManager();
+				int noUtilisateur = article.getNoUtilisateur();
+				Utilisateur utilisateur = null;
+				try {
+					utilisateur = utilisateurManager.selectionnerUtilisateur(noUtilisateur);
+					listeUtilisateurs.add(utilisateur);
+				} catch (BusinessException e) {
+					e.printStackTrace();
+				}
+				request.setAttribute("listeUtilisateurs", listeUtilisateurs);
+		}*/
+		
 		
 		
 

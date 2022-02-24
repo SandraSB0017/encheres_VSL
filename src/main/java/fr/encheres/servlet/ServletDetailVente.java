@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.encheres.bll.ArticleManager;
+import fr.encheres.bll.UtilisateurManager;
+import fr.encheres.bo.ArticlesVendus;
+import fr.encheres.bo.Utilisateur;
+import fr.encheres.exception.BusinessException;
+
 /**
  * Servlet implementation class ServletDetailVente
  */
@@ -18,7 +24,11 @@ public class ServletDetailVente extends HttpServlet {
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		int noArticle=Integer.parseInt(request.getParameter("noArticle"));
+		ArticleManager articleManager = new ArticleManager();
+		ArticlesVendus article;
+		article = articleManager.selectionnerArticle(noArticle);
+		request.setAttribute("article", article);
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/detailVente.jsp");
 		rd.forward(request, response);
 		}

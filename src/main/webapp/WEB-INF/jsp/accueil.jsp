@@ -77,7 +77,7 @@
 						<div class="card mb-3">
 							<div class="card-body">
 								<h5 class="card-title">
-									<a href="${pageContext.request.contextPath}/ServletDetailVente"><span>
+									<a href="${pageContext.request.contextPath}/ServletDetailVente?noArticle=${article.noArticle}"><span>
 											${article.nomArticle}</span></a>
 								</h5>
 								<label for="prix" class="prix "> Prix :<span>
@@ -85,7 +85,7 @@
 									class="finEnchere "> Fin de l'enchère :<span>${article.dateFinEncheres}</span></label><br>
 								<label for="vendeur" name="vendeur" class="vendeur ">
 									Vendeur : <a id="vendeur" name="vendeur"
-									href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur"><span>${utilisateur.pseudo}</span></a>
+									href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur?noUtilisateur=${article.noUtilisateur}"><span>${article.noUtilisateur} ${utilisateur.pseudo }</span></a>
 								</label>
 	
 							</div>

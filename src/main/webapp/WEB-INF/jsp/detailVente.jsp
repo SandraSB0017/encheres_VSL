@@ -4,11 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Bootstrap core CSS -->
-  <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
-  <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link
+	href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/style.css"
+	rel="stylesheet">
 
-    <title>Application enchères</title>
+<title>Application enchères</title>
 </head>
 
 <title>Détail vente</title>
@@ -52,22 +55,24 @@
 				<form method="post" action="">
 
 					<label for="nomArticle" class="label1 "><span
-						class="label-monProfil"> PC GAMER pour travailler</span></label> <br>
-					<label for="description" class="label1 ">Description : <span
+						class="label-monProfil">${article.nomArticle}</span></label> <br> <label
+						for="description" class="label1 ">Description : <span
 						class="label-monProfil"></span></label>
 					<textarea class="form-control" placeholder=""
-						id="floatingTextarea2" style="height: 100px"></textarea>
+						id="floatingTextarea2" style="height: 100px">${article.description}</textarea>
 					<label for="catégorie" class="label1 ">Catégorie : <span
-						class="label-monProfil"></span></label> <br> <label
+						class="label-monProfil">${article.noCategorie}</span></label> <br> <label
 						for="meilleureOffre" class="label1 ">Meilleure offre : <span
 						class="label-monProfil"></span></label> <br> <label for="miseAPrix"
 						class="label1 ">Mise à prix : <span
-						class="label-monProfil"></span></label> <br> <label for="finEnchere"
-						class="label1 ">Fin de l'enchère : <span
-						class="label-monProfil"></span></label><br> <label for="retrait"
-						class="label1 ">Retrait : <span class="label-monProfil"></span></label><br>
-					<label for="vendeur" class="label1 ">Vendeur : <span
-						class="label-monProfil"></span></label><br>
+						class="label-monProfil">${article.prixInitial}</span></label> <br> <label
+						for="finEnchere" class="label1 ">Fin de l'enchère : <span
+						class="label-monProfil">${article.dateFinEncheres}</span></label><br>
+					<label for="retrait" class="label1 ">Retrait : <span
+						class="label-monProfil"></span></label><br> <label for="vendeur"
+						class="label1 ">Vendeur : <a
+						href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur?noUtilisateur=${article.noUtilisateur}"><span
+							class="label-monProfil">${article.noUtilisateur}</span></a></label><br>
 
 					<div class="row">
 						<div class="col-md-3">
@@ -84,7 +89,9 @@
 							<a href="${pageContext.request.contextPath}/ServletListeEncheres"><input
 								type="button" name="encherir" class="btn-detailVente "
 								value="Enchérir"></a>
+
 						</div>
+					</div>
 				</form>
 			</div>
 
