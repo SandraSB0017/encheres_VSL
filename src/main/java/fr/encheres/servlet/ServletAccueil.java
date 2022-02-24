@@ -34,24 +34,10 @@ public class ServletAccueil extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		/*ArticleManager articleManager = new ArticleManager();
-		ArticlesVendus article;
-		int noArticle = 14;
-
-		UtilisateurManager utilisateurManager = new UtilisateurManager();
-		Utilisateur utilisateur;
-
-		try {
-			article = articleManager.selectionnerArticle(noArticle);
-			int noUtilisateur = article.getNoUtilisateur();
-			utilisateur = utilisateurManager.selectionnerUtilisateur(noUtilisateur);
-			request.setAttribute("article", article);
-			request.setAttribute("utilisateur", utilisateur);
-		} catch (BusinessException e) {
-			e.printStackTrace();
-		}*/
 		List<ArticlesVendus>listeArticle = new ArticleManager().selectAllArticle();
 		request.setAttribute("listeArticle", listeArticle);
+		
+		
 		/*UtilisateurManager utilisateurManager = new UtilisateurManager();
 		Utilisateur utilisateur = null;
 		ArticlesVendus article = null;
@@ -83,8 +69,6 @@ public class ServletAccueil extends HttpServlet {
 				}
 				request.setAttribute("listeUtilisateurs", listeUtilisateurs);
 		}*/
-		
-		
 		
 
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
