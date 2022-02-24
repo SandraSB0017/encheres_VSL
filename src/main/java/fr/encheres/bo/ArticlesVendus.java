@@ -2,8 +2,6 @@ package fr.encheres.bo;
 
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.time.LocalDate;
 
 	public class ArticlesVendus implements Serializable {
 		
@@ -14,7 +12,7 @@ import java.time.LocalDate;
 		private String nomArticle;
 		private String description;
 		private String dateDebutEncheres;
-		private LocalDate dateFinEncheres;
+		private String dateFinEncheres;
 		private int prixInitial;
 		private int prixVente;
 		private int noUtilisateur;
@@ -75,13 +73,13 @@ import java.time.LocalDate;
 		/**
 		 * @return the dateFinEncheres
 		 */
-		public LocalDate getDateFinEncheres() {
+		public String getDateFinEncheres() {
 			return dateFinEncheres;
 		}
 		/**
-		 * @param dateFinEncheres the dateFinEncheres to set
+		 * @param dateFinEncheres2 the dateFinEncheres to set
 		 */
-		public void setDateFinEncheres(LocalDate dateFinEncheres) {
+		public void setDateFinEncheres(String dateFinEncheres) {
 			this.dateFinEncheres = dateFinEncheres;
 		}
 		/**
@@ -150,7 +148,7 @@ import java.time.LocalDate;
 		 * @param noCategorie
 		 */
 		public ArticlesVendus(int noArticle, String nomArticle, String description, String dateDebutEncheres,
-				LocalDate dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
+				String dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
 			super();
 			this.noArticle = noArticle;
 			this.nomArticle = nomArticle;
@@ -172,7 +170,7 @@ import java.time.LocalDate;
 		 * @param noUtilisateur
 		 * @param noCategorie
 		 */
-		public ArticlesVendus(String nomArticle, String description, String dateDebutEncheres, LocalDate dateFinEncheres,
+		public ArticlesVendus(String nomArticle, String description, String dateDebutEncheres, String dateFinEncheres,
 				int prixInitial, int prixVente, int noUtilisateur, int noCategorie) {
 			super();
 			this.nomArticle = nomArticle;

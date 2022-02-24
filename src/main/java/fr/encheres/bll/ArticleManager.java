@@ -13,7 +13,7 @@ public class ArticleManager {
 		this.articleDAO = DAOFactory.getArticleDAO();
 	}
 
-	public ArticlesVendus ajouterArticle(String nomArticle, String description, String dateDebutEncheresSaisies, int prixInitial, int noUtilisateur,
+	public ArticlesVendus ajouterArticle(String nomArticle, String description, String dateDebutEncheresSaisies, String dateFinEncheres, int prixInitial, int noUtilisateur,
 			int noCategorie) throws BusinessException {
 		BusinessException businessException = new BusinessException();
 
@@ -21,7 +21,7 @@ public class ArticleManager {
 
 		article = new ArticlesVendus(nomArticle, description, prixInitial, noCategorie);
 		article.setDateDebutEncheres(dateDebutEncheresSaisies);
-		// article.setDateFinEncheres(LocalDate.now());
+		article.setDateFinEncheres(dateFinEncheres);
 		article.setNomArticle(nomArticle);
 		article.setDescription(description);
 		article.setNoUtilisateur(noUtilisateur);
@@ -31,6 +31,10 @@ public class ArticleManager {
 
 		this.articleDAO.insertArticle(article);
 		return article;
+	}
+
+	public ArticlesVendus selectionnerArticle(int noArticle) {
+		return this.articleDAO.selectArticle(noArticle);
 	}
 	
 	

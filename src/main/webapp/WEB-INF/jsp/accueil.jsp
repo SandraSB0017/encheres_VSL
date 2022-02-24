@@ -54,11 +54,11 @@
 					  <div class="col-sm-6">
 					    <div class="card">
 					      <div class="card-body">
-					        <h5 class="card-title"><a href="${pageContext.request.contextPath}/ServletDetailVente">PC Gamer pour travailler</a></h5>
-					        <label for="prix" class="prix "> Prix :</label><br>
-					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
+					        <h5 class="card-title"><a href="${pageContext.request.contextPath}/ServletDetailVente"><span> ${article.nomArticle}</span></a></h5>
+					        <label for="prix" class="prix "> Prix :<span> ${article.prixInitial}</span></label><br>
+					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :<span>${article.dateFinEncheres}</span></label><br>
 					        <label for="vendeur" name="vendeur"  class="vendeur "> Vendeur : 
-					<a id="vendeur" name="vendeur" href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur">jojo44</a></label>
+					<a id="vendeur" name="vendeur" href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur"><span>${utilisateur.pseudo}</span></a></label>
 				
 					      </div>
 					    </div>
@@ -66,7 +66,7 @@
 					  <div class="col-sm-6">
 					    <div class="card">
 					      <div class="card-body">
-					        <h5 class="card-title"><a href="">Rocket stove pour riz et pâtes</a></h5>
+					        <h5 class="card-title"><a href="${pageContext.request.contextPath}/ServletDetailVente">Rocket stove pour riz et pâtes</a></h5>
 					       <label for="prix" class="prix "> Prix :</label><br>
 					        <label for="finEnchere" class="finEnchere "> Fin de l'enchère :</label><br>
 					        <label for="vendeur" name="vendeur" class="vendeur "> Vendeur : <a href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur">NineJea</a></label>

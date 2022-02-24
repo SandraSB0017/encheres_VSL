@@ -1,10 +1,7 @@
 package fr.encheres.servlet;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -48,7 +45,7 @@ public class ServletNouvelleVente extends HttpServlet {
 		String nomArticle;
 		String description;
 		String dateDebutEncheres;
-		//Date dateFinEncheres;
+		String dateFinEncheres;
 		int prixInitial;
 		int PrixVente;
 		String rue;
@@ -60,7 +57,7 @@ public class ServletNouvelleVente extends HttpServlet {
 		nomArticle = request.getParameter("nomArticle");
 		description = request.getParameter("description");
 		dateDebutEncheres= request.getParameter("dateDebutEncheres");
-		// dateFinEncheres = request.getParameter("dateFinEncheres");
+		dateFinEncheres = request.getParameter("dateFinEncheres");
 		prixInitial = Integer.parseInt(request.getParameter("prixInitial"));
 		// rue = request.getParameter("rue");
 		// codePostal=Integer.parseInt(request.getParameter("codePostal"));
@@ -73,7 +70,7 @@ public class ServletNouvelleVente extends HttpServlet {
 		try {
 			
 			int noCategorie = categorieManager.selectCategorie(libelleCategorie);
-			articleManager.ajouterArticle(nomArticle, description,dateDebutEncheres, prixInitial, noUtilisateur, noCategorie);
+			articleManager.ajouterArticle(nomArticle, description,dateDebutEncheres,dateFinEncheres, prixInitial, noUtilisateur, noCategorie);
 			this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/listeEncheres.jsp").forward(request, response);
 		} catch (BusinessException | SQLException e) {
 			e.printStackTrace();
