@@ -9,12 +9,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.encheres.bo.ArticlesVendus;
+import fr.encheres.bo.Utilisateur;
 
 public class ArticleDAOJdbcImpl implements ArticleDAO {
 	private static final String INSERT_ARTICLE = "insert into ARTICLES_VENDUS (nom_article,description,date_debut_encheres,date_fin_encheres,prix_initial,no_utilisateur, no_categorie) values(?,?,?,?,?,?,?)";
 	private static final String SELECT_BY_NO_ARTICLE = "select * from ARTICLES_VENDUS where no_article = ?";
 	private static final String SELECT_ALL_ARTICLE = "select * from ARTICLES_VENDUS";
-	@Override
+	
+	private static final String SELECT_ALL = "select" +
+														    "a.noArticle as no_article," +
+														            "a.nomArticle as nom_article," +
+														    "a.descrition as description," +
+														            "a dateDebutEncheres as date_debut_encheres," +
+														    "a.date—fin—encheres as dateFinEncheres," +
+														            "a.prixInitial as prix_intial," +
+														    "a.prixVente as prix_vente, " +
+														            "a.noUtilisateur as no_utilisateur," +
+														    "a.noCategorie as no_categorie," +
+														           "u.pseudo as pseudo"+
+														           "from"+
+														    "ARTICLES_VENDUS a"+
+														            "inner join UTILISATEURS u ON a.noUtilisateur = u.no_utilsateur";
+		@Override
 	public void insertArticle(ArticlesVendus article) {
 		try (Connection cnx = ConnectionProvider.getConnection();
 				PreparedStatement pstmt = cnx.prepareStatement(INSERT_ARTICLE,
@@ -90,4 +106,39 @@ public class ArticleDAOJdbcImpl implements ArticleDAO {
 		}
 		return listeArticle;
 	}
+
+	@Override
+	public List<ArticlesVendus> select() {
+		List<ArticlesVendus> listeArticle = new ArrayList<ArticlesVendus>();
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement pstmt = cnx.prepareStatement(SELECT_ALL)) {
+			ResultSet rs = pstmt.executeQuery();
+			ArticlesVendus article = new ArticlesVendus();
+			while (rs.next()) {
+				if(rs.getInt("no_utilisateur") != article.getNoUtilisateur()) {
+					article = new ArticlesVendus(
+							rs.getInt("no_article"),
+							rs.getString("nom_article"),
+							rs.getString("description"),
+							rs.getString("date_debut_encheres"),
+							rs.getString("date_fin_encheres"),
+							rs.getInt("prix_initial"),
+							rs.getInt("prix_vente"),
+							rs.getInt("no_utilisateur"),
+							rs.getInt("no_categorie"));
+					listeArticle.add(article);
+				}
+				Utilisateur utilisateur = new Utilisateur();
+				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+				utilisateur.setPseudo(rs.getString("pseudo"));
+				
+			}
+				
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeArticle ;
+	}
+	
 }

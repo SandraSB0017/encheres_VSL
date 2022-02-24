@@ -70,6 +70,17 @@ public class ServletAccueil extends HttpServlet {
 				request.setAttribute("listeUtilisateurs", listeUtilisateurs);
 		}*/
 		
+		/*ArticlesVendus articleVendu = new ArticlesVendus();
+		UtilisateurManager utilisateurManageur = new UtilisateurManager();
+		int noUtilisateur = articleVendu.getNoUtilisateur();
+		Utilisateur utilisateur=null;
+		try {
+			utilisateur = utilisateurManageur.selectionnerUtilisateur(noUtilisateur);
+		} catch (BusinessException e) {
+			
+			e.printStackTrace();
+		}
+		request.setAttribute("utilisateur", utilisateur);*/
 
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
 		rd.forward(request, response);

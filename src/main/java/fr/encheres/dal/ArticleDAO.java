@@ -11,5 +11,6 @@ public interface ArticleDAO {
 
 	public List<ArticlesVendus> selectAll();
 	
+	public List<ArticlesVendus> select();
 
 }
