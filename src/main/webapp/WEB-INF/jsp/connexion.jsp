@@ -4,8 +4,12 @@
 
 <!DOCTYPE html>
 <html>
-<%@include file="/WEB-INF/fragments/head.html"%>
-<link href="${pageContext.request.contextPath}/css/connexion.css" rel="stylesheet">
+<head>
+    <!-- Bootstrap core CSS -->
+  <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="${pageContext.request.contextPath}/css/connexion.css" rel="stylesheet">
+    <title>Application enchères</title>
+</head>
 
 
 <body>

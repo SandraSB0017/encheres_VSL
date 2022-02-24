@@ -4,8 +4,15 @@
 
 <!DOCTYPE html>
 <html>
-<%@include file="/WEB-INF/fragments/head.html"%>
+	<meta charset="UTF-8">
 <link href="${pageContext.request.contextPath}/css/profil.css" rel="stylesheet">
+<head>
+    <!-- Bootstrap core CSS -->
+  <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+  <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
+
+    <title>Application enchères</title>
+</head>
 
 <body>
 <header class="container-fluid">
