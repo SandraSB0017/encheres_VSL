@@ -204,7 +204,7 @@ justify-content: center !important;
     bottom:20px ;
     left: 15px;
     border-radius: 50%;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -216,7 +216,8 @@ justify-content: center !important;
    
 
 .logo-btn-rond-accueil{
-    text-align: center;
+   margin-left:10px;
+   margin-top:-8px;
     width: 25px;
 }
 input:invalid {
