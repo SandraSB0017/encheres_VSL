@@ -17,7 +17,7 @@ import fr.encheres.exception.BusinessException;
 /**
  * Servlet implementation class ServletProfilDelete
  */
-@WebServlet(urlPatterns = { "/supprimer", "/modifier" })
+@WebServlet(urlPatterns = { "/supprimer", "/modifier"})
 public class ServletProfilDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -48,13 +48,15 @@ public class ServletProfilDelete extends HttpServlet {
 
 			try {
 				utilisateurManager.supprimerUtilisateur(noUtilisateur);
-				RequestDispatcher rd = request.getRequestDispatcher("ServletAccueil");
-				rd.forward(request, response);
+
 			} catch (BusinessException e) {
 				e.printStackTrace();
 			}
 			session.invalidate();
-
+	
+			RequestDispatcher rd = request.getRequestDispatcher("ServletAccueil");
+			rd.forward(request, response);
+			
 		} else if (request.getServletPath().equals("/modifier") && motDePasseAcctuel.equals(motDePasseVerifie)) {
 			request.setCharacterEncoding("UTF-8");
 			Utilisateur utilisateur = null;

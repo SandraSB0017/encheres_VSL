@@ -112,8 +112,7 @@
 						value="Enregistrer Modification"> <a
 						href="${pageContext.request.contextPath}/modifier"></a> <input
 						type="submit" class="btn btn-info btn-md mt-3 btn-profil"
-						value="Supprimer"> <a
-						href="${pageContext.request.contextPath}/"></a>
+						value="Supprimer" formaction="${pageContext.request.contextPath}/supprimer"><a href="${pageContext.request.contextPath}/supprimer"></a>
 				</div>
 
 			</div>
