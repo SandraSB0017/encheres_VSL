@@ -13,16 +13,17 @@
 </head>
 <body>
 
-	<header class="container">
+	<header class="container-fluid">
 		<div class="row">
 			<h1 class="col-4"><a class="eniHome" href="http://localhost:8080/encheres_VSL/ServletAccueil" rel="stylesheet">ENI-Enchères</a></h1>
 		</div>
 	</header>
+	
+	
+	<div class="profil-cnx">
 
-	<h2>Mon profil</h2>
-
-
-	<div class="container-formulaire-profil">
+	<h2 class="mt-5">Mon profil</h2>
+	<div class="container-formulaire-profil mt-4">
 
 		<form action="${pageContext.request.contextPath}/ServletNewUtilisateur" method="post" class="container-fluid ">
 			<div class="row justify-content-sm-center">
@@ -94,7 +95,7 @@
 	
 </div>
 	</form>
-
+</div>
 	</div>
 	<a class="btn-retour" onclick="history.go(-1)"><img alt="logo-fleche-retour" src="<%=request.getContextPath()%>/ressources/retour.png"class="logo-btn-rond-accueil"></a>
 	

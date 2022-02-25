@@ -5,11 +5,12 @@
 <Resource 
 	 maxWaitMillis="10000"
 	 maxIdle="30" maxTotal="100" 
-	 password="test" 
-	 username="sa" 
-	 url="jdbc:sqlserver://localhost;databasename=BDD_ENCHERES" 
+	 password="adminADMIN@12345678" 
+	 username="SA" 
+	 url="jdbc:sqlserver://localhost;databasename=BDD_ENCHERES-2" 
 	 type="javax.sql.DataSource" 
 	 driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
 	 name="jdbc/pool_cnx"/>
+	 
 
 </Context>
