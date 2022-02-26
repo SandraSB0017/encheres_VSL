@@ -96,7 +96,7 @@
 									class="finEnchere "> Fin de l'enchère :<span>${article.dateFinEncheres}</span></label><br>
 								<label for="vendeur" name="vendeur" class="vendeur ">
 									Vendeur : <a id="vendeur" name="vendeur"
-									href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur?noUtilisateur=${article.noUtilisateur}"><span>${article.noUtilisateur} ${utilisateur.pseudo }</span></a>
+									href="${pageContext.request.contextPath}/ServletProfilAutreUtilisateur?noUtilisateur=${article.noUtilisateur}"><span>${article.proprietaire.pseudo}</span></a>
 								</label>
 	
 							</div>

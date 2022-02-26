@@ -16,20 +16,7 @@ public class ArticleDAOJdbcImpl implements ArticleDAO {
 	private static final String SELECT_BY_NO_ARTICLE = "select * from ARTICLES_VENDUS where no_article = ?";
 	private static final String SELECT_ALL_ARTICLE = "select * from ARTICLES_VENDUS";
 	
-	private static final String SELECT_ALL = "select" +
-														    "a.noArticle as no_article," +
-														            "a.nomArticle as nom_article," +
-														    "a.descrition as description," +
-														            "a dateDebutEncheres as date_debut_encheres," +
-														    "a.date—fin—encheres as dateFinEncheres," +
-														            "a.prixInitial as prix_intial," +
-														    "a.prixVente as prix_vente, " +
-														            "a.noUtilisateur as no_utilisateur," +
-														    "a.noCategorie as no_categorie," +
-														           "u.pseudo as pseudo"+
-														           "from"+
-														    "ARTICLES_VENDUS a"+
-														            "inner join UTILISATEURS u ON a.noUtilisateur = u.no_utilsateur";
+	private static final String SELECT_ALL = "select a.no_article,a.nom_article,a.description,a.date_debut_encheres,a.date_fin_encheres,a.prix_initial,a.prix_vente,a.no_utilisateur,a.no_categorie,u.pseudo from ARTICLES_VENDUS a inner join UTILISATEURS u ON a.no_utilisateur = u.no_utilisateur";
 		@Override
 	public void insertArticle(ArticlesVendus article) {
 		try (Connection cnx = ConnectionProvider.getConnection();
@@ -114,8 +101,13 @@ public class ArticleDAOJdbcImpl implements ArticleDAO {
 				PreparedStatement pstmt = cnx.prepareStatement(SELECT_ALL)) {
 			ResultSet rs = pstmt.executeQuery();
 			ArticlesVendus article = new ArticlesVendus();
+			
 			while (rs.next()) {
+				
 				if(rs.getInt("no_utilisateur") != article.getNoUtilisateur()) {
+					Utilisateur utilisateur = new Utilisateur();
+					utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+					utilisateur.setPseudo(rs.getString("pseudo"));
 					article = new ArticlesVendus(
 							rs.getInt("no_article"),
 							rs.getString("nom_article"),
@@ -126,11 +118,10 @@ public class ArticleDAOJdbcImpl implements ArticleDAO {
 							rs.getInt("prix_vente"),
 							rs.getInt("no_utilisateur"),
 							rs.getInt("no_categorie"));
+					article.setProprietaire(utilisateur);
 					listeArticle.add(article);
 				}
-				Utilisateur utilisateur = new Utilisateur();
-				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
-				utilisateur.setPseudo(rs.getString("pseudo"));
+				
 				
 			}
 				

@@ -39,9 +39,9 @@ public class ArticleManager {
 		return this.articleDAO.selectArticle(noArticle);
 	}
 
-	public List<ArticlesVendus> selectAllArticle() {
+	public List<ArticlesVendus> select() {
 		List<ArticlesVendus> listeArticle = null;
-		listeArticle = articleDAO.selectAll();
+		listeArticle = articleDAO.select();
 		return listeArticle;
 	}
 	

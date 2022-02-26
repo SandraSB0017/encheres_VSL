@@ -22,7 +22,7 @@ public class ServletListeEncheres extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<ArticlesVendus>listeArticle = new ArticleManager().selectAllArticle();
+		List<ArticlesVendus>listeArticle = new ArticleManager().select();
 		request.setAttribute("listeArticle", listeArticle);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/listeEncheres.jsp");

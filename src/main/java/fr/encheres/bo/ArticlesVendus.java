@@ -17,6 +17,7 @@ import java.io.Serializable;
 		private int prixVente;
 		private int noUtilisateur;
 		private int noCategorie;
+		private Utilisateur proprietaire;
 		
 		
 		
@@ -192,5 +193,11 @@ import java.io.Serializable;
 					+ ", dateDebutEncheres=" + dateDebutEncheres + ", dateFinEncheres=" + dateFinEncheres + ", prixInitial="
 					+ prixInitial + ", prixVente=" + prixVente + ", noUtilisateur=" + noUtilisateur + ", noCategorie="
 					+ noCategorie + "]";
+		}
+		public Utilisateur getProprietaire() {
+			return proprietaire;
+		}
+		public void setProprietaire(Utilisateur proprietaire) {
+			this.proprietaire = proprietaire;
 		}
 }

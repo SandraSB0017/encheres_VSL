@@ -34,7 +34,7 @@ public class ServletAccueil extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		List<ArticlesVendus>listeArticle = new ArticleManager().selectAllArticle();
+		List<ArticlesVendus>listeArticle = new ArticleManager().select();
 		request.setAttribute("listeArticle", listeArticle);
 		
 		
